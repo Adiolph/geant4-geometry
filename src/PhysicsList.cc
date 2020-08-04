@@ -1,4 +1,5 @@
 #include "PhysicsList.hh"
+#include "EMCasCadePhysicsConstructor.hh"
 
 #include "G4DecayPhysics.hh"
 #include "G4EmStandardPhysics.hh"
@@ -20,41 +21,41 @@ PhysicsList::PhysicsList()
     : G4VModularPhysicsList()
 {
   SetVerboseLevel(1);
+  RegisterPhysics(new EMCasCadePhysicsConstructor());
 
-  // Default physics
-  RegisterPhysics(new G4DecayPhysics());
 
-  // EM physics
-  RegisterPhysics(new G4EmStandardPhysics_option2);
+  // // Default physics
+  // RegisterPhysics(new G4DecayPhysics());
 
-  // Synchroton Radiation & GN Physics
-  // RegisterPhysics(new G4EmExtraPhysics());
+  // // EM physics
+  // RegisterPhysics(new G4EmStandardPhysics_option2);
 
-  // Hadron Elastic scattering
-  RegisterPhysics(new G4HadronElasticPhysics());
+  // // Synchroton Radiation & GN Physics
+  // // RegisterPhysics(new G4EmExtraPhysics());
 
-  // Hadron Physics
-  RegisterPhysics(new G4HadronPhysicsFTFP_BERT());
+  // // Hadron Elastic scattering
+  // RegisterPhysics(new G4HadronElasticPhysics());
 
-  // Stopping Physics
-  RegisterPhysics(new G4StoppingPhysics());
+  // // Hadron Physics
+  // RegisterPhysics(new G4HadronPhysicsFTFP_BERT());
 
-  // Ion Physics
-  RegisterPhysics(new G4IonPhysics());
+  // // Stopping Physics
+  // RegisterPhysics(new G4StoppingPhysics());
 
-  // Neutron tracking cut
-  RegisterPhysics(new G4NeutronTrackingCut());
+  // // Ion Physics
+  // RegisterPhysics(new G4IonPhysics());
 
-  // Radioactive decay
-  RegisterPhysics(new G4RadioactiveDecayPhysics());
+  // // Neutron tracking cut
+  // RegisterPhysics(new G4NeutronTrackingCut());
 
-  // optical physics
-  G4OpticalPhysics *opticalPhysics = new G4OpticalPhysics();
-  opticalPhysics->SetMaxNumPhotonsPerStep(400);
-  opticalPhysics->SetTrackSecondariesFirst(kCerenkov, true);
-  // RegisterPhysics(opticalPhysics);
+  // // Radioactive decay
+  // RegisterPhysics(new G4RadioactiveDecayPhysics());
 
-  DumpCutValuesTable();
+  // // optical physics
+  // G4OpticalPhysics *opticalPhysics = new G4OpticalPhysics();
+  // opticalPhysics->SetMaxNumPhotonsPerStep(400);
+  // opticalPhysics->SetTrackSecondariesFirst(kCerenkov, true);
+  // // RegisterPhysics(opticalPhysics);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -67,15 +68,7 @@ PhysicsList::~PhysicsList()
 
 void PhysicsList::SetCuts()
 {
-  // defaultCutValue = 100.0 * mm;
-  // SetCutsWithDefault();
-  // G4double cutForGamma = 100.0 * mm;
-  // G4double cutForElectron = 100.0 * mm;
-  // G4double cutForPositron = 100.0 * mm;
-  // SetCutValue(cutForGamma, "gamma");
-  // SetCutValue(cutForElectron, "e-");
-  // SetCutValue(cutForPositron, "e+");
-  G4double lowlimit = 0.25 * MeV;
+  G4double lowlimit = 500 * keV;
   G4ProductionCutsTable::GetProductionCutsTable()->SetEnergyRange(lowlimit, 100. * TeV);
   G4VUserPhysicsList::SetCuts();
   DumpCutValuesTable();

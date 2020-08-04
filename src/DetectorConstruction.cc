@@ -160,7 +160,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     myMPT->DumpTable();
 
     // set matieral properties table
-    worldMat->SetMaterialPropertiesTable(myMPT);
+    // worldMat->SetMaterialPropertiesTable(myMPT);
 
     // solid volume
     G4Box *solidWorld =
