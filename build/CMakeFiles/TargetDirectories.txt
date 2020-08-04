@@ -1,0 +1,7 @@
+/Users/apple/prog/geant4/examples/extended/optical/OpNovice2/build/CMakeFiles/install/local.dir
+/Users/apple/prog/geant4/examples/extended/optical/OpNovice2/build/CMakeFiles/install/strip.dir
+/Users/apple/prog/geant4/examples/extended/optical/OpNovice2/build/CMakeFiles/OpNovice2.dir
+/Users/apple/prog/geant4/examples/extended/optical/OpNovice2/build/CMakeFiles/install.dir
+/Users/apple/prog/geant4/examples/extended/optical/OpNovice2/build/CMakeFiles/list_install_components.dir
+/Users/apple/prog/geant4/examples/extended/optical/OpNovice2/build/CMakeFiles/rebuild_cache.dir
+/Users/apple/prog/geant4/examples/extended/optical/OpNovice2/build/CMakeFiles/edit_cache.dir
