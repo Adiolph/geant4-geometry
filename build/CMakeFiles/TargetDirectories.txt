@@ -1,7 +1,0 @@
-/home/lab110/softwares/geant4/geant4-physics-model/build/CMakeFiles/install/strip.dir
-/home/lab110/softwares/geant4/geant4-physics-model/build/CMakeFiles/edit_cache.dir
-/home/lab110/softwares/geant4/geant4-physics-model/build/CMakeFiles/OpNovice2.exe.dir
-/home/lab110/softwares/geant4/geant4-physics-model/build/CMakeFiles/rebuild_cache.dir
-/home/lab110/softwares/geant4/geant4-physics-model/build/CMakeFiles/list_install_components.dir
-/home/lab110/softwares/geant4/geant4-physics-model/build/CMakeFiles/install/local.dir
-/home/lab110/softwares/geant4/geant4-physics-model/build/CMakeFiles/install.dir
