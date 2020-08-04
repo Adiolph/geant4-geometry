@@ -13,6 +13,9 @@
 #include "G4eplusAnnihilation.hh"
 #include "G4PhotoElectricEffect.hh"
 #include "G4LivermorePhotoElectricModel.hh"
+#include "G4PenelopePhotoElectricModel.hh"
+#include "G4PenelopeComptonModel.hh"
+#include "G4GammaGeneralProcess.hh"
 
 // helper
 #include "G4PhysicsListHelper.hh"
@@ -31,13 +34,6 @@
 EMCasCadePhysicsConstructor::EMCasCadePhysicsConstructor(G4int ver, const G4String &name)
     : G4VPhysicsConstructor("EMCasCadePhysicsConstructor"), verbose(ver)
 {
-  G4EmParameters* param = G4EmParameters::Instance();
-  param->SetApplyCuts(true);
-  param->SetGeneralProcessActive(true);
-  param->SetDefaults();
-  param->SetVerbose(verbose);
-  SetPhysicsType(bElectromagnetic);
-
 }
 
 EMCasCadePhysicsConstructor::~EMCasCadePhysicsConstructor()
@@ -61,13 +57,19 @@ void EMCasCadePhysicsConstructor::ConstructProcess()
     G4cout << "### " << GetPhysicsName() << " Construct Processes " << G4endl;
   }
   G4PhysicsListHelper* ph = G4PhysicsListHelper::GetPhysicsListHelper();
-  
+
   // gamma physics
   G4ParticleDefinition* gamma = G4Gamma::Gamma()->Definition();
   G4PhotoElectricEffect* pee = new G4PhotoElectricEffect();
-  pee->SetEmModel(new G4LivermorePhotoElectricModel());
+  pee->SetEmModel(new G4PenelopePhotoElectricModel());
+  G4ComptonScattering* cps = new G4ComptonScattering();
+  cps->SetEmModel(new G4PenelopeComptonModel());
+  // G4GammaGeneralProcess* sp = new G4GammaGeneralProcess();
+  // sp->AddEmProcess(new G4GammaConversion());
+  // sp->AddEmProcess(cps);
+  // sp->AddEmProcess(pee);
   ph->RegisterProcess(new G4GammaConversion(), gamma);
-  ph->RegisterProcess(new G4ComptonScattering(), gamma);
+  ph->RegisterProcess(cps, gamma);
   ph->RegisterProcess(pee, gamma);
 
   // electron physics

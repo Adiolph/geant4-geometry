@@ -1,0 +1,33 @@
+# set cut before run
+# /cuts/setLowEdge 0.25 MeV
+
+# run initialization
+/run/initialize
+
+# set cut
+# /run/setCut 10 mm
+# /run/setCutForAGivenParticle e- 0.5 mm
+# /run/setCutForAGivenParticle gamma 0.5 m
+
+# set verbose
+/control/verbose  0
+/run/verbose      0
+/event/verbose    1
+/tracking/verbose 1
+/analysis/verbose 1
+
+# set hist
+/analysis/h1/set      0 100 0 1000 keV
+/analysis/h1/setXaxis 0 "Energy [keV]"
+/analysis/h1/setYaxis 0 "Number of electrons"
+/analysis/h1/set      1 35 1.5 5 eV
+/analysis/h1/setXaxis 1 "Energy [eV]"
+/analysis/h1/setYaxis 1 "Number of photons"
+/analysis/h1/set      2 100 0 100 m
+/analysis/h1/setXaxis 2 "Propagation Length [m]"
+/analysis/h1/setYaxis 2 "Number of photons"
+
+# set particle gun
+/gun/particle  e-
+/gun/energy    1 TeV
+/run/beamOn    1

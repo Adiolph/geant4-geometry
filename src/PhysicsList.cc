@@ -4,6 +4,7 @@
 #include "G4DecayPhysics.hh"
 #include "G4EmStandardPhysics.hh"
 #include "G4EmStandardPhysics_option2.hh"
+#include "G4EmStandardPhysics_option1.hh"
 #include "G4RadioactiveDecayPhysics.hh"
 #include "G4OpticalPhysics.hh"
 #include "G4EmExtraPhysics.hh"
@@ -12,10 +13,10 @@
 #include "G4StoppingPhysics.hh"
 #include "G4NeutronTrackingCut.hh"
 #include "G4IonPhysics.hh"
-#include "G4NeutronTrackingCut.hh"
 
 #include "G4UnitsTable.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4EmParameters.hh"
 
 PhysicsList::PhysicsList()
     : G4VModularPhysicsList()
@@ -23,12 +24,11 @@ PhysicsList::PhysicsList()
   SetVerboseLevel(1);
   RegisterPhysics(new EMCasCadePhysicsConstructor());
 
-
   // // Default physics
   // RegisterPhysics(new G4DecayPhysics());
 
   // // EM physics
-  // RegisterPhysics(new G4EmStandardPhysics_option2);
+  // RegisterPhysics(new G4EmStandardPhysics_option1);
 
   // // Synchroton Radiation & GN Physics
   // // RegisterPhysics(new G4EmExtraPhysics());
@@ -56,6 +56,10 @@ PhysicsList::PhysicsList()
   // opticalPhysics->SetMaxNumPhotonsPerStep(400);
   // opticalPhysics->SetTrackSecondariesFirst(kCerenkov, true);
   // // RegisterPhysics(opticalPhysics);
+
+  G4EmParameters* param = G4EmParameters::Instance();
+  param->SetApplyCuts(true);
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -68,8 +72,14 @@ PhysicsList::~PhysicsList()
 
 void PhysicsList::SetCuts()
 {
-  G4double lowlimit = 500 * keV;
+  G4double cutForGamma = 500 * mm;
+  G4double cutForElectron = 0.5 * mm;
+  G4double cutForPositron = 0.5 * mm;
+  SetCutValue(cutForGamma, "gamma");
+  SetCutValue(cutForElectron, "e-");
+  SetCutValue(cutForPositron, "e+");
+  G4double lowlimit = 100 * keV;
   G4ProductionCutsTable::GetProductionCutsTable()->SetEnergyRange(lowlimit, 100. * TeV);
-  G4VUserPhysicsList::SetCuts();
+  // G4VUserPhysicsList::SetCuts();
   DumpCutValuesTable();
 }

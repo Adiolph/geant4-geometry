@@ -44,6 +44,7 @@ set(OpNovice2_SCRIPTS
     OpNovice2.in
     vis.mac
     unified.mac
+    EmCascade.mac
     glisur.mac
     electron.mac
     scint_by_particle.mac
