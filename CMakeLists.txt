@@ -31,8 +31,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(OpNovice2 OpNovice2.cc ${sources} ${headers})
-target_link_libraries(OpNovice2 ${Geant4_LIBRARIES} )
+add_executable(OpNovice2.exe OpNovice2.cc ${sources} ${headers})
+target_link_libraries(OpNovice2.exe ${Geant4_LIBRARIES} )
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
@@ -60,5 +60,5 @@ endforeach()
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
-install(TARGETS OpNovice2 DESTINATION bin)
+install(TARGETS OpNovice2.exe DESTINATION bin)
 
