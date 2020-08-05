@@ -29,5 +29,5 @@
 
 # set particle gun
 /gun/particle  e-
-/gun/energy    1 TeV
-/run/beamOn    1
+/gun/energy    10 TeV
+/run/beamOn    5
