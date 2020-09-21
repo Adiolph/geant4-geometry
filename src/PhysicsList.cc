@@ -78,8 +78,8 @@ void PhysicsList::SetCuts()
   SetCutValue(cutForGamma, "gamma");
   SetCutValue(cutForElectron, "e-");
   SetCutValue(cutForPositron, "e+");
-  G4double lowlimit = 100 * keV;
-  G4ProductionCutsTable::GetProductionCutsTable()->SetEnergyRange(lowlimit, 100. * TeV);
+  G4double lowlimit = 10 * GeV;
+  G4ProductionCutsTable::GetProductionCutsTable()->SetEnergyRange(lowlimit, 1000. * TeV);
   // G4VUserPhysicsList::SetCuts();
   DumpCutValuesTable();
 }

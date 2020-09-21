@@ -65,6 +65,7 @@ SteppingAction::~SteppingAction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 void SteppingAction::UserSteppingAction(const G4Step *step)
 {
+  // get particle defination
   static G4ParticleDefinition *opticalphoton =
       G4OpticalPhoton::OpticalPhotonDefinition();
   static G4ParticleDefinition *electron =
@@ -72,22 +73,14 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
   G4AnalysisManager *analysisMan = G4AnalysisManager::Instance();
 
   G4Track *track = step->GetTrack();
-  G4StepPoint *endPoint = step->GetPostStepPoint();
-  G4StepPoint *startPoint = step->GetPreStepPoint();
-
+  if (track->GetKineticEnergy() < 100*GeV)
+  {
+    track->SetTrackStatus(fStopAndKill);
+    return;
+  }
   G4String particleName = track->GetDynamicParticle()->GetParticleDefinition()->GetParticleName();
 
-  if (particleName == "opticalphoton")
-  {
-    const G4VProcess *pds = endPoint->GetProcessDefinedStep();
-    if (pds->GetProcessName() == "OpAbsorption")
-    {
-    }
-    else if (pds->GetProcessName() == "OpRayleigh")
-    {
-    }
-  }
-  else
+  if (particleName != "opticalphoton")
   { // particle != opticalphoton
     // print how many Cerenkov and scint photons produced this step
     // this demonstrates use of GetNumPhotons()

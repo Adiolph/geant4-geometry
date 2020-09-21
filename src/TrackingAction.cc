@@ -34,6 +34,7 @@
 #include "G4TrackingManager.hh"
 #include "G4Track.hh"
 #include "G4OpticalPhoton.hh"
+#include "G4SystemOfUnits.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 TrackingAction::TrackingAction()
@@ -43,6 +44,10 @@ TrackingAction::TrackingAction()
 
 void TrackingAction::PreUserTrackingAction(const G4Track *aTrack)
 {
+    // auto aStep = aTrack->GetStep();
+    // auto bTrack = aStep->GetTrack();
+    // if(bTrack->GetKineticEnergy() < 100*GeV)
+    //     bTrack->SetTrackStatus(fStopAndKill);
 }
 
 void TrackingAction::PostUserTrackingAction(const G4Track *aTrack)
