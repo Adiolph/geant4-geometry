@@ -73,11 +73,6 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
   G4AnalysisManager *analysisMan = G4AnalysisManager::Instance();
 
   G4Track *track = step->GetTrack();
-  if (track->GetKineticEnergy() < 100*GeV)
-  {
-    track->SetTrackStatus(fStopAndKill);
-    return;
-  }
   G4String particleName = track->GetDynamicParticle()->GetParticleDefinition()->GetParticleName();
 
   if (particleName != "opticalphoton")
@@ -119,6 +114,12 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
 
     for (auto sec : *secondaries)
     {
+      if(sec->GetKineticEnergy() < 100*GeV)
+      {
+        const_cast<G4Track *>(sec)->SetTrackStatus(fStopAndKill);
+        G4cout << "Particle name: " << sec->GetDefinition()->GetParticleName()
+          << " energy: " << sec->GetKineticEnergy() << G4endl;
+      }
       if (sec->GetDynamicParticle()->GetParticleDefinition() == electron)
       {
         G4double energy = sec->GetKineticEnergy();
@@ -135,6 +136,10 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
         }
       }
     }
+  }
+  if (track->GetKineticEnergy() < 100*GeV)
+  {
+    track->SetTrackStatus(fStopAndKill);
   }
 
   return;

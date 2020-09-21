@@ -30,4 +30,4 @@
 # set particle gun
 /gun/particle  e-
 /gun/energy    10 TeV
-/run/beamOn    5
+/run/beamOn    1
