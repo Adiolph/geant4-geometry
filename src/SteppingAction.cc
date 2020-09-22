@@ -70,7 +70,7 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
       G4OpticalPhoton::OpticalPhotonDefinition();
   static G4ParticleDefinition *electron =
       G4Electron::ElectronDefinition();
-  G4AnalysisManager *analysisMan = G4AnalysisManager::Instance();
+  G4AnalysisManager *analysisManger = G4AnalysisManager::Instance();
 
   G4Track *track = step->GetTrack();
   G4String particleName = track->GetDynamicParticle()->GetParticleDefinition()->GetParticleName();
@@ -114,24 +114,42 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
 
     for (auto sec : *secondaries)
     {
-      if(sec->GetKineticEnergy() < 100*GeV)
+      // record secondary info
+      if(sec->GetTotalEnergy() < 100*GeV)
       {
-        G4cout << "StepAction: record secondary particle name: " << sec->GetDefinition()->GetParticleName()
-          << " energy: " << sec->GetKineticEnergy() << G4endl;
+        G4String name = sec->GetDefinition()->GetParticleName();
+        CLHEP::Hep3Vector pos = sec->GetPosition();
+        CLHEP::Hep3Vector dir = sec->GetMomentumDirection();
+        sec->GetGlobalTime();
+
+        G4cout << "StepAction: record secondary particle name: " << name
+         << " energy: " << sec->GetTotalEnergy() << G4endl;
+        analysisManger->FillNtupleSColumn(0,0, name);
+        analysisManger->FillNtupleDColumn(0,1, pos.x());
+        analysisManger->FillNtupleDColumn(0,2, pos.y());
+        analysisManger->FillNtupleDColumn(0,3, pos.z());
+        analysisManger->FillNtupleDColumn(0,4, sec->GetGlobalTime());
+        analysisManger->FillNtupleDColumn(0,5, sec->GetTotalEnergy());
+        analysisManger->FillNtupleDColumn(0,6, dir.x());
+        analysisManger->FillNtupleDColumn(0,7, dir.y());
+        analysisManger->FillNtupleDColumn(0,8, dir.z());
+        analysisManger->AddNtupleRow();
       }
+
+      // record spectrum
       if (sec->GetDynamicParticle()->GetParticleDefinition() == electron)
       {
         G4double energy = sec->GetKineticEnergy();
-        analysisMan->FillH1(0, energy);
+        analysisManger->FillH1(0, energy);
       }
       else if (sec->GetDynamicParticle()->GetParticleDefinition() == opticalphoton)
       {
         if (sec->GetCreatorProcess()->GetProcessName().compare("Cerenkov") == 0 and sec->GetParentID() == 1)
         {
           G4double energy = sec->GetKineticEnergy();
-          analysisMan->FillH1(1, energy);
+          analysisManger->FillH1(1, energy);
           G4double length = sec->GetTrackLength();
-          analysisMan->FillH1(2, length);
+          analysisManger->FillH1(2, length);
         }
       }
     }
@@ -139,7 +157,9 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
   if (track->GetKineticEnergy() < 100*GeV)
   {
     track->SetTrackStatus(fStopAndKill);
-    G4cout << "Energy of track below 100 GeV, terminate track! " << G4endl;
+    G4cout << "StepAction: energy of track below 100 GeV, record and terminate track, particle name: "
+     << track->GetDefinition()->GetParticleName()
+     << " energy: " << track->GetKineticEnergy() << G4endl;
   }
 
   return;

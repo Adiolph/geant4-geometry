@@ -64,19 +64,17 @@ void Analysis::Book()
   // Creating histograms
   //
   // Define histogram indices, titles
-  G4cout << "Initial Analysis! " << G4endl;
   G4int maxHisto = 3;
   G4String name[] = {
-      "Electron Spectrum", // 0
-      "Cerenkov Spectrum", // 1
-      "Photon Length"      // 2
+      "ElectronSpectrum", // 0
+      "CerenkovSpectrum", // 1
+      "PhotonLength"      // 2
   };
   G4String title[] = {
       "Electron Spectrum", // 0
       "Cerenkov Spectrum", // 1
       "Photon Length"      // 2
   };
-  G4cout << "Initial Analysis TITLE! " << G4endl;
   // Default values (to be reset via /analysis/h1/set command)
   G4int nbins = 100;
   G4double vmin = 0.;
@@ -87,13 +85,18 @@ void Analysis::Book()
     G4int ih = analysisManager->CreateH1(name[k], title[k], nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, true);
   }
-  G4cout << "Initial Analysis Succeed! " << G4endl;
 
-  // // Creating ntuple
-  // //
-  // analysisManager->CreateNtuple("Optical", "Spectrums");
-  // analysisManager->CreateNtupleDColumn("Electron Spectrum");
-  // analysisManager->CreateNtupleDColumn("Cerenkov Spectrum");
-  // analysisManager->CreateNtupleDColumn("Photon Length");
-  // analysisManager->FinishNtuple();
+  // Creating ntuple
+  //
+  analysisManager->CreateNtuple("Secondary", "SecondaryTable");
+  analysisManager->CreateNtupleSColumn("Name");
+  analysisManager->CreateNtupleDColumn("x0");
+  analysisManager->CreateNtupleDColumn("y0");
+  analysisManager->CreateNtupleDColumn("z0");
+  analysisManager->CreateNtupleDColumn("t0");
+  analysisManager->CreateNtupleDColumn("E0");
+  analysisManager->CreateNtupleDColumn("nx");
+  analysisManager->CreateNtupleDColumn("ny");
+  analysisManager->CreateNtupleDColumn("nz");
+  analysisManager->FinishNtuple();
 }

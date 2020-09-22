@@ -65,16 +65,6 @@ RunAction::~RunAction()
 void RunAction::BeginOfRunAction(const G4Run *aRun)
 {
   G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
-
-  if (fPrimary)
-  {
-    G4ParticleDefinition *particle =
-        fPrimary->GetParticleGun()->GetParticleDefinition();
-    G4double energy = fPrimary->GetParticleGun()->GetParticleEnergy();
-    G4cout << "Particle name: " << particle->GetParticleName() << G4endl;
-    G4cout << "Particle energy: " << energy << G4endl;
-  }
-
   //histograms
   G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
   if (analysisManager->IsActive())
@@ -95,25 +85,6 @@ void RunAction::EndOfRunAction(const G4Run *aRun)
 
   // save histograms
   G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
-
-  if (analysisManager->GetH1(1))
-  {
-    G4cout << G4endl << " ----> print histograms statistic ";
-    // if (isMaster)
-    {
-      G4cout << "for the entire run " << G4endl << G4endl;
-    }
-    // else
-    {
-      G4cout << "for the local thread " << G4endl << G4endl;
-    }
-
-    // G4cout << " Number of Cerenkov photons:"
-    //        << analysisManager->GetH1(1)->get_bins()
-    //        << " mean energy = "
-    //        << G4BestUnit(analysisManager->GetH1(1)->rms(), "Energy") << G4endl;
-  }
-
   if (analysisManager->IsActive())
   {
     analysisManager->Write();
