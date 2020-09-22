@@ -35,6 +35,7 @@
 #define Analysis_h 1
 
 #include "globals.hh"
+#include "G4Track.hh"
 
 #include "g4root.hh"
 //#include "g4xml.hh"
@@ -51,7 +52,14 @@ public:
 private:
   void Book();
   G4String fFileName;
+  G4AnalysisManager *fAnalysisManager;
 };
+
+namespace Analysis_Method
+{
+  void RecordSecondary(const G4Track *);
+  void RecordTrack(const G4Track *);
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

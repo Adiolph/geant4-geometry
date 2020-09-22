@@ -117,23 +117,9 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
       // record secondary info
       if(sec->GetTotalEnergy() < 100*GeV)
       {
-        G4String name = sec->GetDefinition()->GetParticleName();
-        CLHEP::Hep3Vector pos = sec->GetPosition();
-        CLHEP::Hep3Vector dir = sec->GetMomentumDirection();
-        sec->GetGlobalTime();
-
-        G4cout << "StepAction: record secondary particle name: " << name
+        Analysis_Method::RecordSecondary(sec);
+        G4cout << "StepAction: record secondary particle name: " << sec->GetDefinition()->GetParticleName()
          << " energy: " << sec->GetTotalEnergy() << G4endl;
-        analysisManger->FillNtupleSColumn(0,0, name);
-        analysisManger->FillNtupleDColumn(0,1, pos.x());
-        analysisManger->FillNtupleDColumn(0,2, pos.y());
-        analysisManger->FillNtupleDColumn(0,3, pos.z());
-        analysisManger->FillNtupleDColumn(0,4, sec->GetGlobalTime());
-        analysisManger->FillNtupleDColumn(0,5, sec->GetTotalEnergy());
-        analysisManger->FillNtupleDColumn(0,6, dir.x());
-        analysisManger->FillNtupleDColumn(0,7, dir.y());
-        analysisManger->FillNtupleDColumn(0,8, dir.z());
-        analysisManger->AddNtupleRow();
       }
 
       // record spectrum
