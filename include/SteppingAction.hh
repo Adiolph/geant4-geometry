@@ -34,18 +34,19 @@
 
 #include "G4UserSteppingAction.hh"
 #include "globals.hh"
-
+#include "TrackingAction.hh"
 
 class SteppingAction : public G4UserSteppingAction
 {
   public:
-    SteppingAction();
+    SteppingAction(TrackingAction*);
     virtual ~SteppingAction();
 
     // method from the base class
     virtual void UserSteppingAction(const G4Step*);
 
   private:
+    TrackingAction* fTrackingAction;
     G4int fVerbose;
 };
 

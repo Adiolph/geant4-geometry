@@ -16,7 +16,8 @@ G4ClassificationOfNewTrack StackingAction::ClassifyNewTrack(const G4Track *track
     return fUrgent;
   if (track->GetKineticEnergy() < 100 * GeV)
   {
-    G4cout << "StackingAction: kill secondary particle name: " << track->GetDefinition()->GetParticleName()
+    G4cout << "StackingAction: kill secondary particle name: " 
+           << track->GetDefinition()->GetParticleName()
            << " energy: " << track->GetKineticEnergy() << G4endl;
     return fKill;
   }

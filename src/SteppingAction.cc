@@ -51,8 +51,9 @@
 #include "G4SystemOfUnits.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-SteppingAction::SteppingAction()
+SteppingAction::SteppingAction(TrackingAction* trackingAction)
     : G4UserSteppingAction(),
+      fTrackingAction(trackingAction),
       fVerbose(0)
 {
 }
@@ -72,14 +73,18 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
       G4Electron::ElectronDefinition();
   G4AnalysisManager *analysisManger = G4AnalysisManager::Instance();
 
+  // add deposite energy
+  fTrackingAction->AddEdep(step->GetTotalEnergyDeposit());
+  G4cout << "StepAction: energy deposit in this step: " << step->GetTotalEnergyDeposit() << G4endl;
+
   G4Track *track = step->GetTrack();
-  G4String particleName = track->GetDynamicParticle()->GetParticleDefinition()->GetParticleName();
+  G4String particleName = track->GetParticleDefinition()->GetParticleName();
 
   if (particleName != "opticalphoton")
   { // particle != opticalphoton
     // print how many Cerenkov and scint photons produced this step
     // this demonstrates use of GetNumPhotons()
-    auto proc_man = track->GetDynamicParticle()->GetParticleDefinition()->GetProcessManager();
+    auto proc_man = track->GetParticleDefinition()->GetProcessManager();
     G4int n_proc = proc_man->GetPostStepProcessVector()->entries();
     G4ProcessVector *proc_vec = proc_man->GetPostStepProcessVector(typeDoIt);
 
@@ -114,12 +119,18 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
 
     for (auto sec : *secondaries)
     {
-      // record secondary info
-      if(sec->GetTotalEnergy() < 100*GeV)
+      // processing for low energy particles
+      if (sec->GetKineticEnergy() < 1*GeV)  // low energy particle are disregarded
       {
-        Analysis_Method::RecordSecondary(sec);
+        G4cout << "StepAction: disregarded secondary particle name: " << sec->GetDefinition()->GetParticleName()
+         << " energy: " << sec->GetKineticEnergy() << G4endl;
+        fTrackingAction->AddEdep(sec->GetKineticEnergy());
+      }
+      else if(sec->GetKineticEnergy() < 100*GeV)  // record secondary info
+      {
         G4cout << "StepAction: record secondary particle name: " << sec->GetDefinition()->GetParticleName()
-         << " energy: " << sec->GetTotalEnergy() << G4endl;
+         << " energy: " << sec->GetKineticEnergy() << G4endl;
+        Analysis_Method::RecordSecondary(sec);
       }
 
       // record spectrum
@@ -142,12 +153,14 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
   }
   if (track->GetKineticEnergy() < 100*GeV)
   {
-    track->SetTrackStatus(fStopAndKill);
     G4cout << "StepAction: energy of track below 100 GeV, record and terminate track, particle name: "
      << track->GetDefinition()->GetParticleName()
-     << " energy: " << track->GetKineticEnergy() << G4endl;
+     << " energy: " << track->GetKineticEnergy()
+     << " initial kin: " << track->GetVertexKineticEnergy() 
+     << " deposition eng: " << fTrackingAction->GetEdep() << G4endl;
+    Analysis_Method::RecordTrack(track, fTrackingAction->GetEdep());
+    track->SetTrackStatus(fStopAndKill);
   }
-
   return;
 }
 

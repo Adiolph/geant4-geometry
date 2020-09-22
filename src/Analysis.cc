@@ -96,7 +96,7 @@ void Analysis::Book()
   fAnalysisManager->CreateNtupleDColumn("nx");
   fAnalysisManager->CreateNtupleDColumn("ny");
   fAnalysisManager->CreateNtupleDColumn("nz");
-  fAnalysisManager->CreateNtupleDColumn("E0(GeV)");
+  fAnalysisManager->CreateNtupleDColumn("E0");
   fAnalysisManager->FinishNtuple();
 
   // creating ntuple for tracks
@@ -109,44 +109,44 @@ void Analysis::Book()
   fAnalysisManager->CreateNtupleDColumn("nx");
   fAnalysisManager->CreateNtupleDColumn("ny");
   fAnalysisManager->CreateNtupleDColumn("nz");
-  fAnalysisManager->CreateNtupleDColumn("depE");
+  fAnalysisManager->CreateNtupleDColumn("Edep");
   fAnalysisManager->CreateNtupleDColumn("len");
   fAnalysisManager->FinishNtuple();
 }
 
-void Analysis_Method::RecordSecondary(const G4Track* sec)
+void Analysis_Method::RecordSecondary(const G4Track *sec)
 {
-  G4AnalysisManager* fAnalysisManager = G4AnalysisManager::Instance();
+  G4AnalysisManager *fAnalysisManager = G4AnalysisManager::Instance();
   G4String name = sec->GetDefinition()->GetParticleName();
   CLHEP::Hep3Vector pos = sec->GetPosition();
   CLHEP::Hep3Vector dir = sec->GetMomentumDirection();
-  fAnalysisManager->FillNtupleSColumn(0,0, name);
-  fAnalysisManager->FillNtupleDColumn(0,1, pos.x()/m);
-  fAnalysisManager->FillNtupleDColumn(0,2, pos.y()/m);
-  fAnalysisManager->FillNtupleDColumn(0,3, pos.z()/m);
-  fAnalysisManager->FillNtupleDColumn(0,4, sec->GetGlobalTime());
-  fAnalysisManager->FillNtupleDColumn(0,5, dir.x());
-  fAnalysisManager->FillNtupleDColumn(0,6, dir.y());
-  fAnalysisManager->FillNtupleDColumn(0,7, dir.z());
-  fAnalysisManager->FillNtupleDColumn(0,8, sec->GetTotalEnergy()/GeV);
-  fAnalysisManager->AddNtupleRow();
+  fAnalysisManager->FillNtupleSColumn(0, 0, name);
+  fAnalysisManager->FillNtupleDColumn(0, 1, pos.x() / m);
+  fAnalysisManager->FillNtupleDColumn(0, 2, pos.y() / m);
+  fAnalysisManager->FillNtupleDColumn(0, 3, pos.z() / m);
+  fAnalysisManager->FillNtupleDColumn(0, 4, sec->GetGlobalTime());
+  fAnalysisManager->FillNtupleDColumn(0, 5, dir.x());
+  fAnalysisManager->FillNtupleDColumn(0, 6, dir.y());
+  fAnalysisManager->FillNtupleDColumn(0, 7, dir.z());
+  fAnalysisManager->FillNtupleDColumn(0, 8, sec->GetKineticEnergy() / GeV);
+  fAnalysisManager->AddNtupleRow(0);
 }
 
-void Analysis_Method::RecordTrack(const G4Track* track)
+void Analysis_Method::RecordTrack(const G4Track *track, G4double Edep)
 {
-  G4AnalysisManager* fAnalysisManager = G4AnalysisManager::Instance();
+  G4AnalysisManager *fAnalysisManager = G4AnalysisManager::Instance();
   G4String name = track->GetDefinition()->GetParticleName();
   CLHEP::Hep3Vector pos = track->GetPosition();
   CLHEP::Hep3Vector dir = track->GetMomentumDirection();
-  fAnalysisManager->FillNtupleSColumn(0,0, name);
-  fAnalysisManager->FillNtupleDColumn(0,1, pos.x()/m);
-  fAnalysisManager->FillNtupleDColumn(0,2, pos.y()/m);
-  fAnalysisManager->FillNtupleDColumn(0,3, pos.z()/m);
-  fAnalysisManager->FillNtupleDColumn(0,4, track->GetGlobalTime());
-  fAnalysisManager->FillNtupleDColumn(0,5, dir.x());
-  fAnalysisManager->FillNtupleDColumn(0,6, dir.y());
-  fAnalysisManager->FillNtupleDColumn(0,7, dir.z());
-  fAnalysisManager->FillNtupleDColumn(0,8, track->GetTotalEnergy()/GeV);
-  fAnalysisManager->FillNtupleDColumn(0,8, track->GetTrackLength()/m);
-  fAnalysisManager->AddNtupleRow();
+  fAnalysisManager->FillNtupleSColumn(1, 0, name);
+  fAnalysisManager->FillNtupleDColumn(1, 1, pos.x() / m);
+  fAnalysisManager->FillNtupleDColumn(1, 2, pos.y() / m);
+  fAnalysisManager->FillNtupleDColumn(1, 3, pos.z() / m);
+  fAnalysisManager->FillNtupleDColumn(1, 4, track->GetGlobalTime());
+  fAnalysisManager->FillNtupleDColumn(1, 5, dir.x());
+  fAnalysisManager->FillNtupleDColumn(1, 6, dir.y());
+  fAnalysisManager->FillNtupleDColumn(1, 7, dir.z());
+  fAnalysisManager->FillNtupleDColumn(1, 8, Edep / GeV);
+  fAnalysisManager->FillNtupleDColumn(1, 9, track->GetKineticEnergy() / m);
+  fAnalysisManager->AddNtupleRow(1);
 }

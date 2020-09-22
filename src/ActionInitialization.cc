@@ -66,9 +66,10 @@ void ActionInitialization::Build() const
   G4cout << 4 << G4endl;
   SetUserAction(new StackingAction());
   G4cout << 5 << G4endl;
-  SetUserAction(new TrackingAction());
+  TrackingAction* trackingAction =  new TrackingAction();
+  SetUserAction(trackingAction);
   G4cout << 6 << G4endl;
-  SetUserAction(new SteppingAction());
+  SetUserAction(new SteppingAction(trackingAction));
   G4cout << 7 << G4endl;
 }
 

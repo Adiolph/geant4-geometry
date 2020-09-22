@@ -38,30 +38,34 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 TrackingAction::TrackingAction()
-    : G4UserTrackingAction()
-{;
-}
-
-void TrackingAction::PreUserTrackingAction(const G4Track *aTrack)
+    : G4UserTrackingAction(),
+      fEdep(0)
 {
-    // auto aStep = aTrack->GetStep();
-    // auto bTrack = aStep->GetTrack();
-    // if(bTrack->GetKineticEnergy() < 100*GeV)
-    //     bTrack->SetTrackStatus(fStopAndKill);
+  ;
 }
 
-void TrackingAction::PostUserTrackingAction(const G4Track *aTrack)
+void TrackingAction::PreUserTrackingAction(const G4Track *track)
 {
-    static G4ParticleDefinition *opticalphoton =
-        G4OpticalPhoton::OpticalPhotonDefinition();
-    if (aTrack->GetDynamicParticle()->GetParticleDefinition() == opticalphoton)
-    {
-        G4double length = aTrack->GetTrackLength();
-        G4AnalysisManager::Instance()->FillH1(2, length);
-    }
+  fEdep = 0;
 }
 
-// void TrackingAction::PostUserTrackingAction(const G4Track *aTrack)
-// {
-// }
+void TrackingAction::PostUserTrackingAction(const G4Track *track)
+{
+  static G4ParticleDefinition *opticalphoton =
+      G4OpticalPhoton::OpticalPhotonDefinition();
+  if (track->GetDynamicParticle()->GetParticleDefinition() == opticalphoton)
+  {
+    G4double length = track->GetTrackLength();
+    G4AnalysisManager::Instance()->FillH1(2, length);
+  }
+}
 
+void TrackingAction::AddEdep(G4double energy)
+{
+  fEdep += energy;
+}
+
+G4double TrackingAction::GetEdep()
+{
+  return fEdep;
+}

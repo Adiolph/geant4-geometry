@@ -22,34 +22,36 @@ PhysicsList::PhysicsList()
     : G4VModularPhysicsList()
 {
   SetVerboseLevel(1);
-  RegisterPhysics(new EMCasCadePhysicsConstructor());
+  
+  // // self defined EM physics
+  // RegisterPhysics(new EMCasCadePhysicsConstructor());
 
-  // // Default physics
-  // RegisterPhysics(new G4DecayPhysics());
+  // Default physics
+  RegisterPhysics(new G4DecayPhysics());
 
-  // // EM physics
-  // RegisterPhysics(new G4EmStandardPhysics_option1);
+  // standard EM physics
+  RegisterPhysics(new G4EmStandardPhysics_option1);
 
-  // // Synchroton Radiation & GN Physics
-  // // RegisterPhysics(new G4EmExtraPhysics());
+  // Synchroton Radiation & GN Physics
+  // RegisterPhysics(new G4EmExtraPhysics());
 
-  // // Hadron Elastic scattering
-  // RegisterPhysics(new G4HadronElasticPhysics());
+  // Hadron Elastic scattering
+  RegisterPhysics(new G4HadronElasticPhysics());
 
-  // // Hadron Physics
-  // RegisterPhysics(new G4HadronPhysicsFTFP_BERT());
+  // Hadron Physics
+  RegisterPhysics(new G4HadronPhysicsFTFP_BERT());
 
-  // // Stopping Physics
-  // RegisterPhysics(new G4StoppingPhysics());
+  // Stopping Physics
+  RegisterPhysics(new G4StoppingPhysics());
 
-  // // Ion Physics
-  // RegisterPhysics(new G4IonPhysics());
+  // Ion Physics
+  RegisterPhysics(new G4IonPhysics());
 
-  // // Neutron tracking cut
-  // RegisterPhysics(new G4NeutronTrackingCut());
+  // Neutron tracking cut
+  RegisterPhysics(new G4NeutronTrackingCut());
 
-  // // Radioactive decay
-  // RegisterPhysics(new G4RadioactiveDecayPhysics());
+  // Radioactive decay
+  RegisterPhysics(new G4RadioactiveDecayPhysics());
 
   // // optical physics
   // G4OpticalPhysics *opticalPhysics = new G4OpticalPhysics();

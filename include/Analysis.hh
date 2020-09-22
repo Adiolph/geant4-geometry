@@ -57,8 +57,8 @@ private:
 
 namespace Analysis_Method
 {
-  void RecordSecondary(const G4Track *);
-  void RecordTrack(const G4Track *);
+  void RecordSecondary(const G4Track * secondary);
+  void RecordTrack(const G4Track * track, G4double Edep);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
