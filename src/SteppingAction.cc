@@ -116,8 +116,7 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
     {
       if(sec->GetKineticEnergy() < 100*GeV)
       {
-        const_cast<G4Track *>(sec)->SetTrackStatus(fStopAndKill);
-        G4cout << "Particle name: " << sec->GetDefinition()->GetParticleName()
+        G4cout << "StepAction: record secondary particle name: " << sec->GetDefinition()->GetParticleName()
           << " energy: " << sec->GetKineticEnergy() << G4endl;
       }
       if (sec->GetDynamicParticle()->GetParticleDefinition() == electron)
@@ -140,6 +139,7 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
   if (track->GetKineticEnergy() < 100*GeV)
   {
     track->SetTrackStatus(fStopAndKill);
+    G4cout << "Energy of track below 100 GeV, terminate track! " << G4endl;
   }
 
   return;

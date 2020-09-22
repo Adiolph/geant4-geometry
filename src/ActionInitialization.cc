@@ -30,6 +30,7 @@
 #include "ActionInitialization.hh"
 #include "PrimaryGeneratorAction.hh"
 #include "RunAction.hh"
+#include "StackingAction.hh"
 #include "TrackingAction.hh"
 #include "SteppingAction.hh"
 
@@ -63,9 +64,12 @@ void ActionInitialization::Build() const
   G4cout << 3 << G4endl;
   SetUserAction(new RunAction(primary));
   G4cout << 4 << G4endl;
-  SetUserAction(new TrackingAction());
-  SetUserAction(new SteppingAction());
+  SetUserAction(new StackingAction());
   G4cout << 5 << G4endl;
+  SetUserAction(new TrackingAction());
+  G4cout << 6 << G4endl;
+  SetUserAction(new SteppingAction());
+  G4cout << 7 << G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
