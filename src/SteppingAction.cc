@@ -159,6 +159,7 @@ void SteppingAction::UserSteppingAction(const G4Step *step)
      << " initial kin: " << track->GetVertexKineticEnergy() 
      << " deposition eng: " << fTrackingAction->GetEdep() << G4endl;
     Analysis_Method::RecordTrack(track, fTrackingAction->GetEdep());
+    Analysis_Method::RecordSecondary(track);
     track->SetTrackStatus(fStopAndKill);
   }
   return;
