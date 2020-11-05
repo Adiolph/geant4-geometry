@@ -51,51 +51,69 @@
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
 
+#include "G4GDMLParser.hh"
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
 
   //detect interactive mode (if no arguments) and define UI session
-  G4UIExecutive* ui = nullptr;
-  if (argc == 1) ui = new G4UIExecutive(argc,argv);
+  G4UIExecutive *ui = nullptr;
+  if (argc == 1)
+    ui = new G4UIExecutive(argc, argv);
 
 #ifdef G4MULTITHREADED
-  G4MTRunManager * runManager = new G4MTRunManager;
+  G4MTRunManager *runManager = new G4MTRunManager;
   G4int nThreads = std::min(G4Threading::G4GetNumberOfCores(), 4);
   runManager->SetNumberOfThreads(nThreads);
   G4cout << "===== OpNovice2 is started with "
-         <<  runManager->GetNumberOfThreads() << " threads =====" << G4endl;
+         << runManager->GetNumberOfThreads() << " threads =====" << G4endl;
 #else
-  G4RunManager * runManager = new G4RunManager;
+  G4RunManager *runManager = new G4RunManager;
 #endif
 
-  DetectorConstruction* detector = new DetectorConstruction();
+  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
+  DetectorConstruction *detector = new DetectorConstruction();
   runManager->SetUserInitialization(detector);
 
-  G4VModularPhysicsList* physicsList = new PhysicsList();
+  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
+  // write geometry into a gdml file
+  G4GDMLParser parser;
+  parser.SetRegionExport(true);
+  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
+  parser.Write("geometry_output.gdml",
+               G4TransportationManager::GetTransportationManager()
+                   ->GetNavigatorForTracking()
+                   ->GetWorldVolume()
+                   ->GetLogicalVolume());
+  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
+
+  G4VModularPhysicsList *physicsList = new PhysicsList();
   runManager->SetUserInitialization(physicsList);
 
   runManager->SetUserInitialization(new ActionInitialization());
 
   //initialize visualization
-  G4VisManager* visManager = new G4VisExecutive;
+  G4VisManager *visManager = new G4VisExecutive;
   visManager->Initialize();
 
-  //get the pointer to the User Interface manager 
-  G4UImanager* UImanager = G4UImanager::GetUIpointer();
+  //get the pointer to the User Interface manager
+  G4UImanager *UImanager = G4UImanager::GetUIpointer();
 
-  if (ui)  {
+  if (ui)
+  {
     //interactive mode
     UImanager->ApplyCommand("/control/execute vis.mac");
     ui->SessionStart();
     delete ui;
   }
-  else  {
-    //batch mode  
+  else
+  {
+    //batch mode
     G4String command = "/control/execute ";
     G4String fileName = argv[1];
-    UImanager->ApplyCommand(command+fileName);
+    UImanager->ApplyCommand(command + fileName);
   }
 
   // job termination
