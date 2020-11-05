@@ -40,6 +40,7 @@
 #include "G4LogicalSkinSurface.hh"
 #include "G4OpticalSurface.hh"
 #include "G4Box.hh"
+#include "G4Sphere.hh"
 #include "G4LogicalVolume.hh"
 #include "G4ThreeVector.hh"
 #include "G4PVPlacement.hh"
@@ -48,14 +49,29 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 DetectorConstruction::DetectorConstruction()
-    : G4VUserDetectorConstruction()
+    : G4VUserDetectorConstruction(),
+      fLogicDoms(nullptr),
+      fStepLimit(nullptr),
+      fUserLimit(nullptr),
+      fCheckOverlaps(true)
 {
+    fNbOfDomX = 4;
+    fNbOfDomY = 4;
+    fNbOfDomZ = 4;
+    fNbOfDomTot = fNbOfDomX * fNbOfDomY * fNbOfDomX;
+    fSepDomX = 50. * m;
+    fSepDomY = 50. * m;
+    fSepDomZ = 50. * m;
+    fRadiusDom = 10. * m;
+    fLogicDoms = new G4LogicalVolume *[fNbOfDomTot];
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 DetectorConstruction::~DetectorConstruction()
 {
+    delete[] fLogicDoms;
+    delete fStepLimit;
     delete fUserLimit;
 }
 
@@ -145,51 +161,77 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     assert(sizeof(mie_water) == sizeof(energy_water));
 
     // construct material properties table
-    G4MaterialPropertiesTable *myMPT = new G4MaterialPropertiesTable();
-    myMPT->AddProperty("RINDEX", photonEnergy, refractiveIndex, nEntries)
+    G4MaterialPropertiesTable *waterMPT = new G4MaterialPropertiesTable();
+    waterMPT->AddProperty("RINDEX", photonEnergy, refractiveIndex, nEntries)
         ->SetSpline(true);
-    myMPT->AddProperty("ABSLENGTH", photonEnergy, absorption, nEntries)
+    waterMPT->AddProperty("ABSLENGTH", photonEnergy, absorption, nEntries)
         ->SetSpline(true);
     // gforward, gbackward, forward backward ratio
     G4double mie_water_const[3] = {0.99, 0.99, 0.8};
-    myMPT->AddProperty("MIEHG", energy_water, mie_water, numentries_water)
+    waterMPT->AddProperty("MIEHG", energy_water, mie_water, numentries_water)
         ->SetSpline(true);
-    myMPT->AddConstProperty("MIEHG_FORWARD", mie_water_const[0]);
-    myMPT->AddConstProperty("MIEHG_BACKWARD", mie_water_const[1]);
-    myMPT->AddConstProperty("MIEHG_FORWARD_RATIO", mie_water_const[2]);
-    myMPT->DumpTable();
+    waterMPT->AddConstProperty("MIEHG_FORWARD", mie_water_const[0]);
+    waterMPT->AddConstProperty("MIEHG_BACKWARD", mie_water_const[1]);
+    waterMPT->AddConstProperty("MIEHG_FORWARD_RATIO", mie_water_const[2]);
+    waterMPT->DumpTable();
 
     // set matieral properties table
-    // worldMat->SetMaterialPropertiesTable(myMPT);
+    worldMat->SetMaterialPropertiesTable(waterMPT);
 
-    // solid volume
+    // solid volume for the water world
     G4Box *solidWorld =
-        new G4Box("World_SW",                                            //its name
+        new G4Box("World_SW",                                         //its name
                   0.5 * worldSize, 0.5 * worldSize, 0.5 * worldSize); //its size
-
-    // logical volume
+    // logical volume for the water world
     G4LogicalVolume *logicWorld =
-        new G4LogicalVolume(solidWorld, //its solid
-                            worldMat,   //its material
-                            "World_LV");   //its name
-
+        new G4LogicalVolume(solidWorld,  //its solid
+                            worldMat,    //its material
+                            "World_LV"); //its name
     // physical volume
     G4VPhysicalVolume *physWorld =
         new G4PVPlacement(0,               //no rotation
                           G4ThreeVector(), //at (0,0,0)
                           logicWorld,      //its logical volume
-                          "World_PV",         //its name
+                          "World_PV",      //its name
                           0,               //its mother  volume
                           false,           //no boolean operation
                           0,               //copy number
                           true);           //overlaps checking
 
+    // solid volume for DOM
+    G4double dom_radius = 0.2 * m;
+    G4Sphere *solidDom =
+        new G4Sphere("DOM_SW",
+                     0.f, dom_radius, 0.f, 2 * M_PI, 0.f, M_PI);
+    // logical volume for the DOM
+    G4Material *materialDom = nist->FindOrBuildMaterial("G4_PLEXIGLASS");
+    for (G4int idx = 0; idx < fNbOfDomTot; idx++)
+    {
+        G4int nx = static_cast<int>(idx / fNbOfDomY / fNbOfDomZ);
+        G4int ny = static_cast<int>((idx - (fNbOfDomY * fNbOfDomZ) * nx) / fNbOfDomZ);
+        G4int nz = idx - (fNbOfDomY * fNbOfDomZ) * nx - fNbOfDomZ * ny;
+        G4float tx = (nx - (fNbOfDomX - 1.f) / 2.f) * fSepDomX;
+        G4float ty = (ny - (fNbOfDomY - 1.f) / 2.f) * fSepDomY;
+        G4float tz = (nz - (fNbOfDomZ - 1.f) / 2.f) * fSepDomZ;
+        // set up logical volume
+        fLogicDoms[idx] =
+            new G4LogicalVolume(solidDom, materialDom, "DOM_LV");
+        // set up physical volume
+        new G4PVPlacement(0,
+                          G4ThreeVector(tx, ty, tz),
+                          fLogicDoms[idx],
+                          "DOM_PV",
+                          logicWorld,
+                          false,
+                          idx,
+                          fCheckOverlaps);
+    }
+
     // set user limit
     fUserLimit = new G4UserLimits();
-    fUserLimit->SetUserMinEkine(0.25*MeV);
+    fUserLimit->SetUserMinEkine(0.25 * MeV);
     logicWorld->SetUserLimits(fUserLimit);
 
     // return physics volume
     return physWorld;
-
 }

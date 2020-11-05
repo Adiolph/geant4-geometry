@@ -54,7 +54,18 @@ public:
     virtual G4VPhysicalVolume *Construct();
 
 private:
+    G4int fNbOfDomX;
+    G4int fNbOfDomY;
+    G4int fNbOfDomZ;
+    G4int fNbOfDomTot;
+    G4float fSepDomX;
+    G4float fSepDomY;
+    G4float fSepDomZ;
+    G4float fRadiusDom;
+    G4LogicalVolume**  fLogicDoms;
     G4UserLimits* fUserLimit;
+    G4UserLimits* fStepLimit;
+    G4bool  fCheckOverlaps;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
