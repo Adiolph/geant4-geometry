@@ -64,6 +64,7 @@ DetectorConstruction::DetectorConstruction()
     fSepDomZ = 50. * m;
     fRadiusDom = 10. * m;
     fLogicDoms = new G4LogicalVolume *[fNbOfDomTot];
+    fWriteFile = "geometry_output.gdml";
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -231,6 +232,8 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     fUserLimit = new G4UserLimits();
     fUserLimit->SetUserMinEkine(0.25 * MeV);
     logicWorld->SetUserLimits(fUserLimit);
+
+    fParser.Write(fWriteFile, physWorld);
 
     // return physics volume
     return physWorld;

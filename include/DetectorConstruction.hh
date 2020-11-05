@@ -40,8 +40,7 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4RunManager.hh"
 #include "G4UserLimits.hh"
-
-class DetectorMessenger;
+#include "G4GDMLParser.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -66,6 +65,8 @@ private:
     G4UserLimits* fUserLimit;
     G4UserLimits* fStepLimit;
     G4bool  fCheckOverlaps;
+    G4GDMLParser fParser;
+    G4String fWriteFile;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

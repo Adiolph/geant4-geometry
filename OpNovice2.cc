@@ -51,8 +51,6 @@
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
 
-#include "G4GDMLParser.hh"
-
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 int main(int argc, char **argv)
@@ -73,21 +71,19 @@ int main(int argc, char **argv)
   G4RunManager *runManager = new G4RunManager;
 #endif
 
-  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
   DetectorConstruction *detector = new DetectorConstruction();
   runManager->SetUserInitialization(detector);
 
-  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
-  // write geometry into a gdml file
-  G4GDMLParser parser;
-  parser.SetRegionExport(true);
-  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
-  parser.Write("geometry_output.gdml",
-               G4TransportationManager::GetTransportationManager()
-                   ->GetNavigatorForTracking()
-                   ->GetWorldVolume()
-                   ->GetLogicalVolume());
-  G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
+  // // write geometry into a gdml file
+  // G4GDMLParser parser;
+  // parser.SetRegionExport(true);
+  // G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
+  // parser.Write("geometry_output.gdml",
+  //              G4TransportationManager::GetTransportationManager()
+  //                  ->GetNavigatorForTracking()
+  //                  ->GetWorldVolume()
+  //                  ->GetLogicalVolume());
+  // G4cout << "At: " << __FILE__ << ": " << __LINE__ <<G4endl;
 
   G4VModularPhysicsList *physicsList = new PhysicsList();
   runManager->SetUserInitialization(physicsList);
