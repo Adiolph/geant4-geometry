@@ -63,15 +63,14 @@ DetectorConstruction::DetectorConstruction()
     fSepDomY = 50. * m;
     fSepDomZ = 50. * m;
     fRadiusDom = 10. * m;
-    fLogicDoms = new G4LogicalVolume *[fNbOfDomTot];
-    fWriteFile = "geometry_output.gdml";
+    fWriteFile = "../out/geometry_output.gdml";
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 DetectorConstruction::~DetectorConstruction()
 {
-    delete[] fLogicDoms;
+    delete fLogicDoms;
     delete fStepLimit;
     delete fUserLimit;
 }
@@ -206,6 +205,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                      0.f, dom_radius, 0.f, 2 * M_PI, 0.f, M_PI);
     // logical volume for the DOM
     G4Material *materialDom = nist->FindOrBuildMaterial("G4_PLEXIGLASS");
+    fLogicDoms = new G4LogicalVolume(solidDom, materialDom, "DOM_LV");
     for (G4int idx = 0; idx < fNbOfDomTot; idx++)
     {
         G4int nx = static_cast<int>(idx / fNbOfDomY / fNbOfDomZ);
@@ -215,12 +215,11 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
         G4float ty = (ny - (fNbOfDomY - 1.f) / 2.f) * fSepDomY;
         G4float tz = (nz - (fNbOfDomZ - 1.f) / 2.f) * fSepDomZ;
         // set up logical volume
-        fLogicDoms[idx] =
-            new G4LogicalVolume(solidDom, materialDom, "DOM_LV");
+        
         // set up physical volume
         new G4PVPlacement(0,
                           G4ThreeVector(tx, ty, tz),
-                          fLogicDoms[idx],
+                          fLogicDoms,
                           "DOM_PV",
                           logicWorld,
                           false,
