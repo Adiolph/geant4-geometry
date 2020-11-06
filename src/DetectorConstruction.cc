@@ -36,7 +36,6 @@
 #include "G4NistManager.hh"
 #include "G4Material.hh"
 #include "G4Element.hh"
-#include "G4LogicalBorderSurface.hh"
 #include "G4LogicalSkinSurface.hh"
 #include "G4OpticalSurface.hh"
 #include "G4Box.hh"
@@ -206,6 +205,20 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     // logical volume for the DOM
     G4Material *materialDom = nist->FindOrBuildMaterial("G4_PLEXIGLASS");
     fLogicDoms = new G4LogicalVolume(solidDom, materialDom, "DOM_LV");
+    // surface property for DOM
+    G4OpticalSurface *opDomSurface = new G4OpticalSurface("DomSurface");
+    opDomSurface->SetType(dielectric_dielectric);
+    opDomSurface->SetFinish(polished);
+    opDomSurface->SetModel(glisur);
+    G4LogicalSkinSurface *domSurface =
+        new G4LogicalSkinSurface("DomSurface", fLogicDoms, opDomSurface);
+    const G4int num = 2;
+    G4double ephoton[num] = {1.56962 * eV, 6.19998 * eV};
+    G4double efficiency[num] = {1., 1.};
+    G4MaterialPropertiesTable *domSurfaceMPT = new G4MaterialPropertiesTable();
+    domSurfaceMPT->AddProperty("EFFICIENCY", ephoton, efficiency, num);
+    opDomSurface->SetMaterialPropertiesTable(domSurfaceMPT);
+
     for (G4int idx = 0; idx < fNbOfDomTot; idx++)
     {
         G4int nx = static_cast<int>(idx / fNbOfDomY / fNbOfDomZ);
@@ -215,7 +228,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
         G4float ty = (ny - (fNbOfDomY - 1.f) / 2.f) * fSepDomY;
         G4float tz = (nz - (fNbOfDomZ - 1.f) / 2.f) * fSepDomZ;
         // set up logical volume
-        
+
         // set up physical volume
         new G4PVPlacement(0,
                           G4ThreeVector(tx, ty, tz),
