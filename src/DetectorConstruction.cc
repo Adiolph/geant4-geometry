@@ -167,11 +167,11 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
         ->SetSpline(true);
     // gforward, gbackward, forward backward ratio
     G4double mie_water_const[3] = {0.99, 0.99, 0.8};
-    waterMPT->AddProperty("MIEHG", energy_water, mie_water, numentries_water)
+    waterMPT->AddProperty("RAYLEIGH", energy_water, mie_water, numentries_water)
         ->SetSpline(true);
-    waterMPT->AddConstProperty("MIEHG_FORWARD", mie_water_const[0]);
-    waterMPT->AddConstProperty("MIEHG_BACKWARD", mie_water_const[1]);
-    waterMPT->AddConstProperty("MIEHG_FORWARD_RATIO", mie_water_const[2]);
+    // waterMPT->AddConstProperty("MIEHG_FORWARD", mie_water_const[0]);
+    // waterMPT->AddConstProperty("MIEHG_BACKWARD", mie_water_const[1]);
+    // waterMPT->AddConstProperty("MIEHG_FORWARD_RATIO", mie_water_const[2]);
     waterMPT->DumpTable();
 
     // set matieral properties table
