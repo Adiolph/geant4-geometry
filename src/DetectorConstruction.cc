@@ -198,7 +198,6 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                           true);           //overlaps checking
 
     // solid volume for DOM
-    G4double dom_radius = 0.2 * m;
     G4Sphere *solidDom =
         new G4Sphere("DOM_SW",
                      0.f, dom_radius, 0.f, 2 * M_PI, 0.f, M_PI);
