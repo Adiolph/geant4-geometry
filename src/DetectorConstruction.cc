@@ -200,7 +200,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     // solid volume for DOM
     G4Sphere *solidDom =
         new G4Sphere("DOM_SW",
-                     0.f, dom_radius, 0.f, 2 * M_PI, 0.f, M_PI);
+                     0.f, fRadiusDom, 0.f, 2 * M_PI, 0.f, M_PI);
     // logical volume for the DOM
     G4Material *materialDom = nist->FindOrBuildMaterial("G4_PLEXIGLASS");
     fLogicDoms = new G4LogicalVolume(solidDom, materialDom, "DOM_LV");
