@@ -56,12 +56,12 @@ DetectorConstruction::DetectorConstruction()
 {
     fNbOfDomX = 4;
     fNbOfDomY = 4;
-    fNbOfDomZ = 4;
+    fNbOfDomZ = 16;
     fNbOfDomTot = fNbOfDomX * fNbOfDomY * fNbOfDomX;
-    fSepDomX = 50. * m;
-    fSepDomY = 50. * m;
-    fSepDomZ = 50. * m;
-    fRadiusDom = 10. * m;
+    fSepDomX = 100. * m;
+    fSepDomY = 100. * m;
+    fSepDomZ = 25. * m;
+    fRadiusDom = 5. * m;
     fWriteFile = "../out/geometry_output.gdml";
 }
 
@@ -80,7 +80,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
 {
     // Get nist material manager
     G4NistManager *nist = G4NistManager::Instance();
-    G4double worldSize = 1000 * m;
+    fWorldSize = 400 * m;
     G4Material *worldMat = nist->FindOrBuildMaterial("G4_WATER");
 
     //
@@ -180,7 +180,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     // solid volume for the water world
     G4Box *solidWorld =
         new G4Box("World_SW",                                         //its name
-                  0.5 * worldSize, 0.5 * worldSize, 0.5 * worldSize); //its size
+                  0.5 * fWorldSize, 0.5 * fWorldSize, 0.5 * fWorldSize); //its size
     // logical volume for the water world
     G4LogicalVolume *logicWorld =
         new G4LogicalVolume(solidWorld,  //its solid

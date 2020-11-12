@@ -2,349 +2,349 @@
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
   <define>
-    <matrix coldim="2" name="EFFICIENCY0x7fe41a882290" values="1.56962e-06 1 6.19998e-06 1"/>
-    <matrix coldim="2" name="RINDEX0x7fe41a869de0" values="2.034e-06 1.3435 2.068e-06 1.344 2.103e-06 1.3445 2.139e-06 1.345 2.177e-06 1.3455 2.216e-06 1.346 2.256e-06 1.3465 2.298e-06 1.347 2.341e-06 1.3475 2.386e-06 1.348 2.433e-06 1.3485 2.481e-06 1.3492 2.532e-06 1.35 2.585e-06 1.3505 2.64e-06 1.351 2.697e-06 1.3518 2.757e-06 1.3522 2.82e-06 1.353 2.885e-06 1.3535 2.954e-06 1.354 3.026e-06 1.3545 3.102e-06 1.355 3.181e-06 1.3555 3.265e-06 1.356 3.353e-06 1.3568 3.446e-06 1.3572 3.545e-06 1.358 3.649e-06 1.3585 3.76e-06 1.359 3.877e-06 1.3595 4.002e-06 1.36 4.136e-06 1.3608"/>
-    <matrix coldim="2" name="GROUPVEL0x7fe41a86a530" values="2.034e-06 218.243 2.051e-06 218.204 2.0855e-06 218.183 2.121e-06 218.157 2.158e-06 218.246 2.1965e-06 218.204 2.236e-06 218.158 2.277e-06 218.212 2.3195e-06 218.155 2.3635e-06 218.188 2.4095e-06 218.208 2.457e-06 216.507 2.5065e-06 215.846 2.5585e-06 218.128 2.6125e-06 218.11 2.6685e-06 215.856 2.727e-06 218.798 2.7885e-06 215.988 2.8525e-06 218.001 2.9195e-06 218.046 2.99e-06 218.029 3.064e-06 218.046 3.1415e-06 218.01 3.223e-06 218.041 3.309e-06 216.226 3.3995e-06 218.568 3.4955e-06 216.325 3.597e-06 217.945 3.7045e-06 217.962 3.8185e-06 217.941 3.9395e-06 217.951 4.136e-06 216.443"/>
-    <matrix coldim="2" name="RAYLEIGH0x7fe41a86acb0" values="1.56962e-06 1.67024e+08 1.58974e-06 1.58727e+08 1.61039e-06 1.50742e+08 1.63157e-06 1.43062e+08 1.65333e-06 1.3568e+08 1.67567e-06 1.28587e+08 1.69863e-06 1.21776e+08 1.72222e-06 1.1524e+08 1.74647e-06 1.0897e+08 1.77142e-06 1.02959e+08 1.7971e-06 9.72004e+07 1.82352e-06 9.16869e+07 1.85074e-06 8.64113e+07 1.87878e-06 8.13668e+07 1.90769e-06 7.65464e+07 1.93749e-06 7.19435e+07 1.96825e-06 6.75513e+07 1.99999e-06 6.33634e+07 2.03278e-06 5.93732e+07 2.06666e-06 5.55746e+07 2.10169e-06 5.19612e+07 2.13793e-06 4.8527e+07 2.17543e-06 4.52659e+07 2.21428e-06 4.21719e+07 2.25454e-06 3.92394e+07 2.29629e-06 3.64625e+07 2.33962e-06 3.38357e+07 2.38461e-06 3.13534e+07 2.43137e-06 2.90103e+07 2.47999e-06 2.6801e+07 2.53061e-06 2.47204e+07 2.58333e-06 2.27634e+07 2.63829e-06 2.09249e+07 2.69565e-06 1.92001e+07 2.75555e-06 1.75842e+07 2.81817e-06 1.60724e+07 2.88371e-06 1.46604e+07 2.95237e-06 1.33435e+07 3.02438e-06 1.21173e+07 3.09999e-06 1.09777e+07 3.17948e-06 9.92042e+06 3.26315e-06 8.94141e+06 3.35134e-06 8.03671e+06 3.44444e-06 7.20247e+06 3.54285e-06 6.43493e+06 3.64705e-06 5.73043e+06 3.75757e-06 5.08542e+06 3.87499e-06 4.49647e+06 3.99999e-06 3.96021e+06 4.13332e-06 3.47341e+06 4.27585e-06 3.03294e+06 4.42856e-06 2.63575e+06 4.59258e-06 2.27891e+06 4.76922e-06 1.95959e+06 4.95999e-06 1.67506e+06 5.16665e-06 1.42271e+06 5.39129e-06 1.2e+06 5.63635e-06 1.00453e+06 5.90475e-06 833967 6.19998e-06 686106"/>
-    <matrix coldim="2" name="ABSLENGTH0x7fe41a86a6c0" values="2.034e-06 3448 2.068e-06 4082 2.103e-06 6329 2.139e-06 9174 2.177e-06 12346 2.216e-06 13889 2.256e-06 15152 2.298e-06 17241 2.341e-06 18868 2.386e-06 20000 2.433e-06 26316 2.481e-06 35714 2.532e-06 45455 2.585e-06 47619 2.64e-06 52632 2.697e-06 52632 2.757e-06 55556 2.82e-06 52632 2.885e-06 52632 2.954e-06 47619 3.026e-06 45455 3.102e-06 41667 3.181e-06 37037 3.265e-06 33333 3.353e-06 30000 3.446e-06 28500 3.545e-06 27000 3.649e-06 24500 3.76e-06 22000 3.877e-06 19500 4.002e-06 17500 4.136e-06 14500"/>
+    <matrix coldim="2" name="EFFICIENCY0x7fc151414e00" values="1.56962e-06 1 6.19998e-06 1"/>
+    <matrix coldim="2" name="RINDEX0x7fc151411e90" values="2.034e-06 1.3435 2.068e-06 1.344 2.103e-06 1.3445 2.139e-06 1.345 2.177e-06 1.3455 2.216e-06 1.346 2.256e-06 1.3465 2.298e-06 1.347 2.341e-06 1.3475 2.386e-06 1.348 2.433e-06 1.3485 2.481e-06 1.3492 2.532e-06 1.35 2.585e-06 1.3505 2.64e-06 1.351 2.697e-06 1.3518 2.757e-06 1.3522 2.82e-06 1.353 2.885e-06 1.3535 2.954e-06 1.354 3.026e-06 1.3545 3.102e-06 1.355 3.181e-06 1.3555 3.265e-06 1.356 3.353e-06 1.3568 3.446e-06 1.3572 3.545e-06 1.358 3.649e-06 1.3585 3.76e-06 1.359 3.877e-06 1.3595 4.002e-06 1.36 4.136e-06 1.3608"/>
+    <matrix coldim="2" name="GROUPVEL0x7fc1514125e0" values="2.034e-06 218.243 2.051e-06 218.204 2.0855e-06 218.183 2.121e-06 218.157 2.158e-06 218.246 2.1965e-06 218.204 2.236e-06 218.158 2.277e-06 218.212 2.3195e-06 218.155 2.3635e-06 218.188 2.4095e-06 218.208 2.457e-06 216.507 2.5065e-06 215.846 2.5585e-06 218.128 2.6125e-06 218.11 2.6685e-06 215.856 2.727e-06 218.798 2.7885e-06 215.988 2.8525e-06 218.001 2.9195e-06 218.046 2.99e-06 218.029 3.064e-06 218.046 3.1415e-06 218.01 3.223e-06 218.041 3.309e-06 216.226 3.3995e-06 218.568 3.4955e-06 216.325 3.597e-06 217.945 3.7045e-06 217.962 3.8185e-06 217.941 3.9395e-06 217.951 4.136e-06 216.443"/>
+    <matrix coldim="2" name="RAYLEIGH0x7fc151412d60" values="1.56962e-06 1.67024e+08 1.58974e-06 1.58727e+08 1.61039e-06 1.50742e+08 1.63157e-06 1.43062e+08 1.65333e-06 1.3568e+08 1.67567e-06 1.28587e+08 1.69863e-06 1.21776e+08 1.72222e-06 1.1524e+08 1.74647e-06 1.0897e+08 1.77142e-06 1.02959e+08 1.7971e-06 9.72004e+07 1.82352e-06 9.16869e+07 1.85074e-06 8.64113e+07 1.87878e-06 8.13668e+07 1.90769e-06 7.65464e+07 1.93749e-06 7.19435e+07 1.96825e-06 6.75513e+07 1.99999e-06 6.33634e+07 2.03278e-06 5.93732e+07 2.06666e-06 5.55746e+07 2.10169e-06 5.19612e+07 2.13793e-06 4.8527e+07 2.17543e-06 4.52659e+07 2.21428e-06 4.21719e+07 2.25454e-06 3.92394e+07 2.29629e-06 3.64625e+07 2.33962e-06 3.38357e+07 2.38461e-06 3.13534e+07 2.43137e-06 2.90103e+07 2.47999e-06 2.6801e+07 2.53061e-06 2.47204e+07 2.58333e-06 2.27634e+07 2.63829e-06 2.09249e+07 2.69565e-06 1.92001e+07 2.75555e-06 1.75842e+07 2.81817e-06 1.60724e+07 2.88371e-06 1.46604e+07 2.95237e-06 1.33435e+07 3.02438e-06 1.21173e+07 3.09999e-06 1.09777e+07 3.17948e-06 9.92042e+06 3.26315e-06 8.94141e+06 3.35134e-06 8.03671e+06 3.44444e-06 7.20247e+06 3.54285e-06 6.43493e+06 3.64705e-06 5.73043e+06 3.75757e-06 5.08542e+06 3.87499e-06 4.49647e+06 3.99999e-06 3.96021e+06 4.13332e-06 3.47341e+06 4.27585e-06 3.03294e+06 4.42856e-06 2.63575e+06 4.59258e-06 2.27891e+06 4.76922e-06 1.95959e+06 4.95999e-06 1.67506e+06 5.16665e-06 1.42271e+06 5.39129e-06 1.2e+06 5.63635e-06 1.00453e+06 5.90475e-06 833967 6.19998e-06 686106"/>
+    <matrix coldim="2" name="ABSLENGTH0x7fc151412770" values="2.034e-06 3448 2.068e-06 4082 2.103e-06 6329 2.139e-06 9174 2.177e-06 12346 2.216e-06 13889 2.256e-06 15152 2.298e-06 17241 2.341e-06 18868 2.386e-06 20000 2.433e-06 26316 2.481e-06 35714 2.532e-06 45455 2.585e-06 47619 2.64e-06 52632 2.697e-06 52632 2.757e-06 55556 2.82e-06 52632 2.885e-06 52632 2.954e-06 47619 3.026e-06 45455 3.102e-06 41667 3.181e-06 37037 3.265e-06 33333 3.353e-06 30000 3.446e-06 28500 3.545e-06 27000 3.649e-06 24500 3.76e-06 22000 3.877e-06 19500 4.002e-06 17500 4.136e-06 14500"/>
   </define>
 
   <materials>
-    <isotope N="12" Z="6" name="C120x7fe41a881490">
+    <isotope N="12" Z="6" name="C120x7fc151412730">
       <atom unit="g/mole" value="12"/>
     </isotope>
-    <isotope N="13" Z="6" name="C130x7fe41a8814d0">
+    <isotope N="13" Z="6" name="C130x7fc1514140a0">
       <atom unit="g/mole" value="13.0034"/>
     </isotope>
-    <element name="C0x7fe41a881510">
-      <fraction n="0.9893" ref="C120x7fe41a881490"/>
-      <fraction n="0.0107" ref="C130x7fe41a8814d0"/>
+    <element name="C0x7fc1514140e0">
+      <fraction n="0.9893" ref="C120x7fc151412730"/>
+      <fraction n="0.0107" ref="C130x7fc1514140a0"/>
     </element>
-    <isotope N="1" Z="1" name="H10x7fe41a868dd0">
+    <isotope N="1" Z="1" name="H10x7fc151410f50">
       <atom unit="g/mole" value="1.00782503081372"/>
     </isotope>
-    <isotope N="2" Z="1" name="H20x7fe41a868e20">
+    <isotope N="2" Z="1" name="H20x7fc151410fa0">
       <atom unit="g/mole" value="2.01410199966617"/>
     </isotope>
-    <element name="H0x7fe41a868fa0">
-      <fraction n="0.999885" ref="H10x7fe41a868dd0"/>
-      <fraction n="0.000115" ref="H20x7fe41a868e20"/>
+    <element name="H0x7fc151411000">
+      <fraction n="0.999885" ref="H10x7fc151410f50"/>
+      <fraction n="0.000115" ref="H20x7fc151410fa0"/>
     </element>
-    <isotope N="16" Z="8" name="O160x7fe41a8690f0">
+    <isotope N="16" Z="8" name="O160x7fc1514111a0">
       <atom unit="g/mole" value="15.9949"/>
     </isotope>
-    <isotope N="17" Z="8" name="O170x7fe41a869150">
+    <isotope N="17" Z="8" name="O170x7fc151411200">
       <atom unit="g/mole" value="16.9991"/>
     </isotope>
-    <isotope N="18" Z="8" name="O180x7fe41a8691a0">
+    <isotope N="18" Z="8" name="O180x7fc151411250">
       <atom unit="g/mole" value="17.9992"/>
     </isotope>
-    <element name="O0x7fe41a869220">
-      <fraction n="0.99757" ref="O160x7fe41a8690f0"/>
-      <fraction n="0.00038" ref="O170x7fe41a869150"/>
-      <fraction n="0.00205" ref="O180x7fe41a8691a0"/>
+    <element name="O0x7fc1514112d0">
+      <fraction n="0.99757" ref="O160x7fc1514111a0"/>
+      <fraction n="0.00038" ref="O170x7fc151411200"/>
+      <fraction n="0.00205" ref="O180x7fc151411250"/>
     </element>
-    <material name="G4_PLEXIGLASS0x7fe41a881350" state="solid">
+    <material name="G4_PLEXIGLASS0x7fc1514134a0" state="solid">
       <T unit="K" value="293.15"/>
       <MEE unit="eV" value="74"/>
       <D unit="g/cm3" value="1.19"/>
-      <fraction n="0.599841070879962" ref="C0x7fe41a881510"/>
-      <fraction n="0.0805418407442843" ref="H0x7fe41a868fa0"/>
-      <fraction n="0.319617088375753" ref="O0x7fe41a869220"/>
+      <fraction n="0.599841070879962" ref="C0x7fc1514140e0"/>
+      <fraction n="0.0805418407442843" ref="H0x7fc151411000"/>
+      <fraction n="0.319617088375753" ref="O0x7fc1514112d0"/>
     </material>
-    <material name="G4_WATER0x7fe41a868ea0" state="solid">
-      <property name="RINDEX" ref="RINDEX0x7fe41a869de0"/>
-      <property name="GROUPVEL" ref="GROUPVEL0x7fe41a86a530"/>
-      <property name="RAYLEIGH" ref="RAYLEIGH0x7fe41a86acb0"/>
-      <property name="ABSLENGTH" ref="ABSLENGTH0x7fe41a86a6c0"/>
+    <material name="G4_WATER0x7fc151410d80" state="solid">
+      <property name="RINDEX" ref="RINDEX0x7fc151411e90"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x7fc1514125e0"/>
+      <property name="RAYLEIGH" ref="RAYLEIGH0x7fc151412d60"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH0x7fc151412770"/>
       <T unit="K" value="293.15"/>
       <MEE unit="eV" value="78"/>
       <D unit="g/cm3" value="1"/>
-      <fraction n="0.111898477841067" ref="H0x7fe41a868fa0"/>
-      <fraction n="0.888101522158933" ref="O0x7fe41a869220"/>
+      <fraction n="0.111898477841067" ref="H0x7fc151411000"/>
+      <fraction n="0.888101522158933" ref="O0x7fc1514112d0"/>
     </material>
   </materials>
 
   <solids>
-    <sphere aunit="deg" deltaphi="360" deltatheta="180" lunit="mm" name="DOM_SW0x7fe41a8811f0" rmax="200" rmin="0" startphi="0" starttheta="0"/>
-    <opticalsurface finish="0" model="0" name="DomSurface0x7fe41a882000" type="1" value="1">
-      <property name="EFFICIENCY" ref="EFFICIENCY0x7fe41a882290"/>
+    <sphere aunit="deg" deltaphi="360" deltatheta="180" lunit="mm" name="DOM_SW0x7fc151413f40" rmax="200" rmin="0" startphi="0" starttheta="0"/>
+    <opticalsurface finish="0" model="0" name="DomSurface0x7fc151414b70" type="1" value="1">
+      <property name="EFFICIENCY" ref="EFFICIENCY0x7fc151414e00"/>
     </opticalsurface>
-    <box lunit="mm" name="World_SW0x7fe41a880720" x="1000000" y="1000000" z="1000000"/>
+    <box lunit="mm" name="World_SW0x7fc151412670" x="400000" y="400000" z="400000"/>
   </solids>
 
   <structure>
-    <volume name="DOM_LV0x7fe41a881890">
-      <materialref ref="G4_PLEXIGLASS0x7fe41a881350"/>
-      <solidref ref="DOM_SW0x7fe41a8811f0"/>
+    <volume name="DOM_LV0x7fc151414420">
+      <materialref ref="G4_PLEXIGLASS0x7fc1514134a0"/>
+      <solidref ref="DOM_SW0x7fc151413f40"/>
     </volume>
-    <volume name="World_LV0x7fe41a880b10">
-      <materialref ref="G4_WATER0x7fe41a868ea0"/>
-      <solidref ref="World_SW0x7fe41a880720"/>
-      <physvol name="DOM_PV0x7fe41a882320">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a882320_pos" unit="mm" x="-75000" y="-75000" z="-75000"/>
+    <volume name="World_LV0x7fc151413400">
+      <materialref ref="G4_WATER0x7fc151410d80"/>
+      <solidref ref="World_SW0x7fc151412670"/>
+      <physvol name="DOM_PV0x7fc151414e90">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151414e90_pos" unit="mm" x="-150000" y="-150000" z="-187500"/>
       </physvol>
-      <physvol copynumber="1" name="DOM_PV0x7fe41a8828d0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8828d0_pos" unit="mm" x="-75000" y="-75000" z="-25000"/>
+      <physvol copynumber="1" name="DOM_PV0x7fc151414d20">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151414d20_pos" unit="mm" x="-150000" y="-150000" z="-162500"/>
       </physvol>
-      <physvol copynumber="2" name="DOM_PV0x7fe41a882bf0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a882bf0_pos" unit="mm" x="-75000" y="-75000" z="25000"/>
+      <physvol copynumber="2" name="DOM_PV0x7fc151414d90">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151414d90_pos" unit="mm" x="-150000" y="-150000" z="-137500"/>
       </physvol>
-      <physvol copynumber="3" name="DOM_PV0x7fe41a882c90">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a882c90_pos" unit="mm" x="-75000" y="-75000" z="75000"/>
+      <physvol copynumber="3" name="DOM_PV0x7fc151415250">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415250_pos" unit="mm" x="-150000" y="-150000" z="-112500"/>
       </physvol>
-      <physvol copynumber="4" name="DOM_PV0x7fe41a883250">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a883250_pos" unit="mm" x="-75000" y="-25000" z="-75000"/>
+      <physvol copynumber="4" name="DOM_PV0x7fc1514152c0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514152c0_pos" unit="mm" x="-150000" y="-150000" z="-87500"/>
       </physvol>
-      <physvol copynumber="5" name="DOM_PV0x7fe41a883590">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a883590_pos" unit="mm" x="-75000" y="-25000" z="-25000"/>
+      <physvol copynumber="5" name="DOM_PV0x7fc151415370">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415370_pos" unit="mm" x="-150000" y="-150000" z="-62500"/>
       </physvol>
-      <physvol copynumber="6" name="DOM_PV0x7fe41a8838b0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8838b0_pos" unit="mm" x="-75000" y="-25000" z="25000"/>
+      <physvol copynumber="6" name="DOM_PV0x7fc1514153c0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514153c0_pos" unit="mm" x="-150000" y="-150000" z="-37500"/>
       </physvol>
-      <physvol copynumber="7" name="DOM_PV0x7fe41a883bc0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a883bc0_pos" unit="mm" x="-75000" y="-25000" z="75000"/>
+      <physvol copynumber="7" name="DOM_PV0x7fc151415430">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415430_pos" unit="mm" x="-150000" y="-150000" z="-12500"/>
       </physvol>
-      <physvol copynumber="8" name="DOM_PV0x7fe41a883ee0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a883ee0_pos" unit="mm" x="-75000" y="25000" z="-75000"/>
+      <physvol copynumber="8" name="DOM_PV0x7fc1514154a0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514154a0_pos" unit="mm" x="-150000" y="-150000" z="12500"/>
       </physvol>
-      <physvol copynumber="9" name="DOM_PV0x7fe41a884270">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a884270_pos" unit="mm" x="-75000" y="25000" z="-25000"/>
+      <physvol copynumber="9" name="DOM_PV0x7fc151415590">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415590_pos" unit="mm" x="-150000" y="-150000" z="37500"/>
       </physvol>
-      <physvol copynumber="10" name="DOM_PV0x7fe41a8842e0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8842e0_pos" unit="mm" x="-75000" y="25000" z="25000"/>
+      <physvol copynumber="10" name="DOM_PV0x7fc1514155e0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514155e0_pos" unit="mm" x="-150000" y="-150000" z="62500"/>
       </physvol>
-      <physvol copynumber="11" name="DOM_PV0x7fe41a8848a0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8848a0_pos" unit="mm" x="-75000" y="25000" z="75000"/>
+      <physvol copynumber="11" name="DOM_PV0x7fc151415630">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415630_pos" unit="mm" x="-150000" y="-150000" z="87500"/>
       </physvol>
-      <physvol copynumber="12" name="DOM_PV0x7fe41a884bc0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a884bc0_pos" unit="mm" x="-75000" y="75000" z="-75000"/>
+      <physvol copynumber="12" name="DOM_PV0x7fc1514156b0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514156b0_pos" unit="mm" x="-150000" y="-150000" z="112500"/>
       </physvol>
-      <physvol copynumber="13" name="DOM_PV0x7fe41a884ed0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a884ed0_pos" unit="mm" x="-75000" y="75000" z="-25000"/>
+      <physvol copynumber="13" name="DOM_PV0x7fc151415720">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415720_pos" unit="mm" x="-150000" y="-150000" z="137500"/>
       </physvol>
-      <physvol copynumber="14" name="DOM_PV0x7fe41a8851f0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8851f0_pos" unit="mm" x="-75000" y="75000" z="25000"/>
+      <physvol copynumber="14" name="DOM_PV0x7fc151415790">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415790_pos" unit="mm" x="-150000" y="-150000" z="162500"/>
       </physvol>
-      <physvol copynumber="15" name="DOM_PV0x7fe41a885500">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a885500_pos" unit="mm" x="-75000" y="75000" z="75000"/>
+      <physvol copynumber="15" name="DOM_PV0x7fc151415800">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415800_pos" unit="mm" x="-150000" y="-150000" z="187500"/>
       </physvol>
-      <physvol copynumber="16" name="DOM_PV0x7fe41a885820">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a885820_pos" unit="mm" x="-25000" y="-75000" z="-75000"/>
+      <physvol copynumber="16" name="DOM_PV0x7fc151415870">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415870_pos" unit="mm" x="-150000" y="-50000" z="-187500"/>
       </physvol>
-      <physvol copynumber="17" name="DOM_PV0x7fe41a885bd0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a885bd0_pos" unit="mm" x="-25000" y="-75000" z="-25000"/>
+      <physvol copynumber="17" name="DOM_PV0x7fc151415510">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415510_pos" unit="mm" x="-150000" y="-50000" z="-162500"/>
       </physvol>
-      <physvol copynumber="18" name="DOM_PV0x7fe41a885ee0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a885ee0_pos" unit="mm" x="-25000" y="-75000" z="25000"/>
+      <physvol copynumber="18" name="DOM_PV0x7fc1514159e0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514159e0_pos" unit="mm" x="-150000" y="-50000" z="-137500"/>
       </physvol>
-      <physvol copynumber="19" name="DOM_PV0x7fe41a886200">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a886200_pos" unit="mm" x="-25000" y="-75000" z="75000"/>
+      <physvol copynumber="19" name="DOM_PV0x7fc151415a50">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415a50_pos" unit="mm" x="-150000" y="-50000" z="-112500"/>
       </physvol>
-      <physvol copynumber="20" name="DOM_PV0x7fe41a886530">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a886530_pos" unit="mm" x="-25000" y="-25000" z="-75000"/>
+      <physvol copynumber="20" name="DOM_PV0x7fc151415ac0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415ac0_pos" unit="mm" x="-150000" y="-50000" z="-87500"/>
       </physvol>
-      <physvol copynumber="21" name="DOM_PV0x7fe41a886850">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a886850_pos" unit="mm" x="-25000" y="-25000" z="-25000"/>
+      <physvol copynumber="21" name="DOM_PV0x7fc151415b30">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415b30_pos" unit="mm" x="-150000" y="-50000" z="-62500"/>
       </physvol>
-      <physvol copynumber="22" name="DOM_PV0x7fe41a886b70">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a886b70_pos" unit="mm" x="-25000" y="-25000" z="25000"/>
+      <physvol copynumber="22" name="DOM_PV0x7fc151415ba0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415ba0_pos" unit="mm" x="-150000" y="-50000" z="-37500"/>
       </physvol>
-      <physvol copynumber="23" name="DOM_PV0x7fe41a886e80">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a886e80_pos" unit="mm" x="-25000" y="-25000" z="75000"/>
+      <physvol copynumber="23" name="DOM_PV0x7fc151415c10">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415c10_pos" unit="mm" x="-150000" y="-50000" z="-12500"/>
       </physvol>
-      <physvol copynumber="24" name="DOM_PV0x7fe41a8871a0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8871a0_pos" unit="mm" x="-25000" y="25000" z="-75000"/>
+      <physvol copynumber="24" name="DOM_PV0x7fc151415c80">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415c80_pos" unit="mm" x="-150000" y="-50000" z="12500"/>
       </physvol>
-      <physvol copynumber="25" name="DOM_PV0x7fe41a8874d0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8874d0_pos" unit="mm" x="-25000" y="25000" z="-25000"/>
+      <physvol copynumber="25" name="DOM_PV0x7fc151415cf0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415cf0_pos" unit="mm" x="-150000" y="-50000" z="37500"/>
       </physvol>
-      <physvol copynumber="26" name="DOM_PV0x7fe41a8877f0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8877f0_pos" unit="mm" x="-25000" y="25000" z="25000"/>
+      <physvol copynumber="26" name="DOM_PV0x7fc151415d60">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415d60_pos" unit="mm" x="-150000" y="-50000" z="62500"/>
       </physvol>
-      <physvol copynumber="27" name="DOM_PV0x7fe41a887b10">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a887b10_pos" unit="mm" x="-25000" y="25000" z="75000"/>
+      <physvol copynumber="27" name="DOM_PV0x7fc151415dd0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415dd0_pos" unit="mm" x="-150000" y="-50000" z="87500"/>
       </physvol>
-      <physvol copynumber="28" name="DOM_PV0x7fe41a887e20">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a887e20_pos" unit="mm" x="-25000" y="75000" z="-75000"/>
+      <physvol copynumber="28" name="DOM_PV0x7fc151415e40">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415e40_pos" unit="mm" x="-150000" y="-50000" z="112500"/>
       </physvol>
-      <physvol copynumber="29" name="DOM_PV0x7fe41a888140">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a888140_pos" unit="mm" x="-25000" y="75000" z="-25000"/>
+      <physvol copynumber="29" name="DOM_PV0x7fc151415eb0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415eb0_pos" unit="mm" x="-150000" y="-50000" z="137500"/>
       </physvol>
-      <physvol copynumber="30" name="DOM_PV0x7fe41a888470">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a888470_pos" unit="mm" x="-25000" y="75000" z="25000"/>
+      <physvol copynumber="30" name="DOM_PV0x7fc151415f20">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415f20_pos" unit="mm" x="-150000" y="-50000" z="162500"/>
       </physvol>
-      <physvol copynumber="31" name="DOM_PV0x7fe41a888790">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a888790_pos" unit="mm" x="-25000" y="75000" z="75000"/>
+      <physvol copynumber="31" name="DOM_PV0x7fc151415f90">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415f90_pos" unit="mm" x="-150000" y="-50000" z="187500"/>
       </physvol>
-      <physvol copynumber="32" name="DOM_PV0x7fe41a888ab0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a888ab0_pos" unit="mm" x="25000" y="-75000" z="-75000"/>
+      <physvol copynumber="32" name="DOM_PV0x7fc151416000">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416000_pos" unit="mm" x="-150000" y="50000" z="-187500"/>
       </physvol>
-      <physvol copynumber="33" name="DOM_PV0x7fe41a888ed0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a888ed0_pos" unit="mm" x="25000" y="-75000" z="-25000"/>
+      <physvol copynumber="33" name="DOM_PV0x7fc1514158e0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514158e0_pos" unit="mm" x="-150000" y="50000" z="-162500"/>
       </physvol>
-      <physvol copynumber="34" name="DOM_PV0x7fe41a8891e0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a8891e0_pos" unit="mm" x="25000" y="-75000" z="25000"/>
+      <physvol copynumber="34" name="DOM_PV0x7fc151415950">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151415950_pos" unit="mm" x="-150000" y="50000" z="-137500"/>
       </physvol>
-      <physvol copynumber="35" name="DOM_PV0x7fe41a889500">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a889500_pos" unit="mm" x="25000" y="-75000" z="75000"/>
+      <physvol copynumber="35" name="DOM_PV0x7fc151416270">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416270_pos" unit="mm" x="-150000" y="50000" z="-112500"/>
       </physvol>
-      <physvol copynumber="36" name="DOM_PV0x7fe41a889830">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a889830_pos" unit="mm" x="25000" y="-25000" z="-75000"/>
+      <physvol copynumber="36" name="DOM_PV0x7fc1514162c0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514162c0_pos" unit="mm" x="-150000" y="50000" z="-87500"/>
       </physvol>
-      <physvol copynumber="37" name="DOM_PV0x7fe41a889b50">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a889b50_pos" unit="mm" x="25000" y="-25000" z="-25000"/>
+      <physvol copynumber="37" name="DOM_PV0x7fc151416330">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416330_pos" unit="mm" x="-150000" y="50000" z="-62500"/>
       </physvol>
-      <physvol copynumber="38" name="DOM_PV0x7fe41a889e70">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a889e70_pos" unit="mm" x="25000" y="-25000" z="25000"/>
+      <physvol copynumber="38" name="DOM_PV0x7fc1514163a0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514163a0_pos" unit="mm" x="-150000" y="50000" z="-37500"/>
       </physvol>
-      <physvol copynumber="39" name="DOM_PV0x7fe41a88a180">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88a180_pos" unit="mm" x="25000" y="-25000" z="75000"/>
+      <physvol copynumber="39" name="DOM_PV0x7fc151416410">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416410_pos" unit="mm" x="-150000" y="50000" z="-12500"/>
       </physvol>
-      <physvol copynumber="40" name="DOM_PV0x7fe41a88a4a0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88a4a0_pos" unit="mm" x="25000" y="25000" z="-75000"/>
+      <physvol copynumber="40" name="DOM_PV0x7fc151416480">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416480_pos" unit="mm" x="-150000" y="50000" z="12500"/>
       </physvol>
-      <physvol copynumber="41" name="DOM_PV0x7fe41a88a7d0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88a7d0_pos" unit="mm" x="25000" y="25000" z="-25000"/>
+      <physvol copynumber="41" name="DOM_PV0x7fc1514164f0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514164f0_pos" unit="mm" x="-150000" y="50000" z="37500"/>
       </physvol>
-      <physvol copynumber="42" name="DOM_PV0x7fe41a88aaf0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88aaf0_pos" unit="mm" x="25000" y="25000" z="25000"/>
+      <physvol copynumber="42" name="DOM_PV0x7fc151416560">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416560_pos" unit="mm" x="-150000" y="50000" z="62500"/>
       </physvol>
-      <physvol copynumber="43" name="DOM_PV0x7fe41a88ae10">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88ae10_pos" unit="mm" x="25000" y="25000" z="75000"/>
+      <physvol copynumber="43" name="DOM_PV0x7fc1514165d0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514165d0_pos" unit="mm" x="-150000" y="50000" z="87500"/>
       </physvol>
-      <physvol copynumber="44" name="DOM_PV0x7fe41a88b120">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88b120_pos" unit="mm" x="25000" y="75000" z="-75000"/>
+      <physvol copynumber="44" name="DOM_PV0x7fc151416640">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416640_pos" unit="mm" x="-150000" y="50000" z="112500"/>
       </physvol>
-      <physvol copynumber="45" name="DOM_PV0x7fe41a88b440">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88b440_pos" unit="mm" x="25000" y="75000" z="-25000"/>
+      <physvol copynumber="45" name="DOM_PV0x7fc1514166b0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514166b0_pos" unit="mm" x="-150000" y="50000" z="137500"/>
       </physvol>
-      <physvol copynumber="46" name="DOM_PV0x7fe41a88b770">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88b770_pos" unit="mm" x="25000" y="75000" z="25000"/>
+      <physvol copynumber="46" name="DOM_PV0x7fc151416720">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416720_pos" unit="mm" x="-150000" y="50000" z="162500"/>
       </physvol>
-      <physvol copynumber="47" name="DOM_PV0x7fe41a88ba90">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88ba90_pos" unit="mm" x="25000" y="75000" z="75000"/>
+      <physvol copynumber="47" name="DOM_PV0x7fc151416790">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416790_pos" unit="mm" x="-150000" y="50000" z="187500"/>
       </physvol>
-      <physvol copynumber="48" name="DOM_PV0x7fe41a88bdb0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88bdb0_pos" unit="mm" x="75000" y="-75000" z="-75000"/>
+      <physvol copynumber="48" name="DOM_PV0x7fc151416800">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416800_pos" unit="mm" x="-150000" y="150000" z="-187500"/>
       </physvol>
-      <physvol copynumber="49" name="DOM_PV0x7fe41a88c0c0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88c0c0_pos" unit="mm" x="75000" y="-75000" z="-25000"/>
+      <physvol copynumber="49" name="DOM_PV0x7fc151416870">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416870_pos" unit="mm" x="-150000" y="150000" z="-162500"/>
       </physvol>
-      <physvol copynumber="50" name="DOM_PV0x7fe41a88c3e0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88c3e0_pos" unit="mm" x="75000" y="-75000" z="25000"/>
+      <physvol copynumber="50" name="DOM_PV0x7fc1514168e0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514168e0_pos" unit="mm" x="-150000" y="150000" z="-137500"/>
       </physvol>
-      <physvol copynumber="51" name="DOM_PV0x7fe41a88c710">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88c710_pos" unit="mm" x="75000" y="-75000" z="75000"/>
+      <physvol copynumber="51" name="DOM_PV0x7fc151416950">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416950_pos" unit="mm" x="-150000" y="150000" z="-112500"/>
       </physvol>
-      <physvol copynumber="52" name="DOM_PV0x7fe41a88ca30">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88ca30_pos" unit="mm" x="75000" y="-25000" z="-75000"/>
+      <physvol copynumber="52" name="DOM_PV0x7fc1514169c0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc1514169c0_pos" unit="mm" x="-150000" y="150000" z="-87500"/>
       </physvol>
-      <physvol copynumber="53" name="DOM_PV0x7fe41a88cd50">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88cd50_pos" unit="mm" x="75000" y="-25000" z="-25000"/>
+      <physvol copynumber="53" name="DOM_PV0x7fc151416a30">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416a30_pos" unit="mm" x="-150000" y="150000" z="-62500"/>
       </physvol>
-      <physvol copynumber="54" name="DOM_PV0x7fe41a88d060">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88d060_pos" unit="mm" x="75000" y="-25000" z="25000"/>
+      <physvol copynumber="54" name="DOM_PV0x7fc151416aa0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416aa0_pos" unit="mm" x="-150000" y="150000" z="-37500"/>
       </physvol>
-      <physvol copynumber="55" name="DOM_PV0x7fe41a88d380">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88d380_pos" unit="mm" x="75000" y="-25000" z="75000"/>
+      <physvol copynumber="55" name="DOM_PV0x7fc151416b10">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416b10_pos" unit="mm" x="-150000" y="150000" z="-12500"/>
       </physvol>
-      <physvol copynumber="56" name="DOM_PV0x7fe41a88d6b0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88d6b0_pos" unit="mm" x="75000" y="25000" z="-75000"/>
+      <physvol copynumber="56" name="DOM_PV0x7fc151416b80">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416b80_pos" unit="mm" x="-150000" y="150000" z="12500"/>
       </physvol>
-      <physvol copynumber="57" name="DOM_PV0x7fe41a88d9d0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88d9d0_pos" unit="mm" x="75000" y="25000" z="-25000"/>
+      <physvol copynumber="57" name="DOM_PV0x7fc151416bf0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416bf0_pos" unit="mm" x="-150000" y="150000" z="37500"/>
       </physvol>
-      <physvol copynumber="58" name="DOM_PV0x7fe41a88dcf0">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88dcf0_pos" unit="mm" x="75000" y="25000" z="25000"/>
+      <physvol copynumber="58" name="DOM_PV0x7fc151416c60">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416c60_pos" unit="mm" x="-150000" y="150000" z="62500"/>
       </physvol>
-      <physvol copynumber="59" name="DOM_PV0x7fe41a88e000">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88e000_pos" unit="mm" x="75000" y="25000" z="75000"/>
+      <physvol copynumber="59" name="DOM_PV0x7fc151416cd0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416cd0_pos" unit="mm" x="-150000" y="150000" z="87500"/>
       </physvol>
-      <physvol copynumber="60" name="DOM_PV0x7fe41a88e320">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88e320_pos" unit="mm" x="75000" y="75000" z="-75000"/>
+      <physvol copynumber="60" name="DOM_PV0x7fc151416d40">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416d40_pos" unit="mm" x="-150000" y="150000" z="112500"/>
       </physvol>
-      <physvol copynumber="61" name="DOM_PV0x7fe41a88e650">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88e650_pos" unit="mm" x="75000" y="75000" z="-25000"/>
+      <physvol copynumber="61" name="DOM_PV0x7fc151416db0">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416db0_pos" unit="mm" x="-150000" y="150000" z="137500"/>
       </physvol>
-      <physvol copynumber="62" name="DOM_PV0x7fe41a88e970">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88e970_pos" unit="mm" x="75000" y="75000" z="25000"/>
+      <physvol copynumber="62" name="DOM_PV0x7fc151416e20">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416e20_pos" unit="mm" x="-150000" y="150000" z="162500"/>
       </physvol>
-      <physvol copynumber="63" name="DOM_PV0x7fe41a88ec90">
-        <volumeref ref="DOM_LV0x7fe41a881890"/>
-        <position name="DOM_PV0x7fe41a88ec90_pos" unit="mm" x="75000" y="75000" z="75000"/>
+      <physvol copynumber="63" name="DOM_PV0x7fc151416e90">
+        <volumeref ref="DOM_LV0x7fc151414420"/>
+        <position name="DOM_PV0x7fc151416e90_pos" unit="mm" x="-150000" y="150000" z="187500"/>
       </physvol>
     </volume>
-    <skinsurface name="DomSurface0x7fe41a881c40" surfaceproperty="DomSurface0x7fe41a882000">
-      <volumeref ref="DOM_LV0x7fe41a881890"/>
+    <skinsurface name="DomSurface0x7fc1514147b0" surfaceproperty="DomSurface0x7fc151414b70">
+      <volumeref ref="DOM_LV0x7fc151414420"/>
     </skinsurface>
   </structure>
 
   <setup name="Default" version="1.0">
-    <world ref="World_LV0x7fe41a880b10"/>
+    <world ref="World_LV0x7fc151413400"/>
   </setup>
 
 </gdml>

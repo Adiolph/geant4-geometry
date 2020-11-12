@@ -61,6 +61,7 @@ private:
     G4float fSepDomY;
     G4float fSepDomZ;
     G4float fRadiusDom;
+    G4float fWorldSize;
     G4LogicalVolume*  fLogicDoms;
     G4UserLimits* fUserLimit;
     G4UserLimits* fStepLimit;
