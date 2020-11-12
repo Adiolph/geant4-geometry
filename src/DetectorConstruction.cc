@@ -57,7 +57,7 @@ DetectorConstruction::DetectorConstruction()
     fNbOfDomX = 4;
     fNbOfDomY = 4;
     fNbOfDomZ = 16;
-    fNbOfDomTot = fNbOfDomX * fNbOfDomY * fNbOfDomX;
+    fNbOfDomTot = fNbOfDomX * fNbOfDomY * fNbOfDomZ;
     fSepDomX = 100. * m;
     fSepDomY = 100. * m;
     fSepDomZ = 25. * m;
@@ -226,6 +226,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
         G4float tx = (nx - (fNbOfDomX - 1.f) / 2.f) * fSepDomX;
         G4float ty = (ny - (fNbOfDomY - 1.f) / 2.f) * fSepDomY;
         G4float tz = (nz - (fNbOfDomZ - 1.f) / 2.f) * fSepDomZ;
+        G4cout << "tx, ty, tz: " << tx << ", " << ty << ", " << tz << G4endl;
         // set up logical volume
 
         // set up physical volume
